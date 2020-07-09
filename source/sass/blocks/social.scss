@@ -1,0 +1,23 @@
+.social {
+  @include list;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  a {
+    &:hover {
+      @include from-desktop {
+        opacity: 0.7;
+      }
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+}

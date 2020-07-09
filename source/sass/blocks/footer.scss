@@ -1,0 +1,58 @@
+.footer {
+  border-top: 1px solid rgba($dark, 0.2);
+
+  p {
+    @include reset-m-p;
+    @include size-height(12px, 1.5);
+    text-align: center;
+
+    color: rgba($dark, 0.5);
+
+    @include until-tablet {
+      margin-top: 24px;
+      margin-bottom: 28px;
+    }
+  }
+}
+
+.footer__container {
+  @include container(110px, 114px);
+  padding-top: 24px;
+  padding-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include until-tablet {
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+
+  img {
+    width: 85px;
+    height: 27px;
+
+    @include until-tablet {
+      width: 99px;
+      height: 31px;
+    }
+  }
+}
+
+.footer__social {
+  width: 112px;
+
+  @include until-tablet {
+    width: 136px;
+  }
+
+  svg {
+    @include until-tablet {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+}
