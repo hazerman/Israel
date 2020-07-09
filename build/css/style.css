@@ -440,7 +440,6 @@ img {
     background-image: url("../img/bg-scroll@1x.png");
     background-repeat: no-repeat;
     background-position: top center;
-    background-repeat: no-repeat;
     background-size: 100%;
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%); }
@@ -461,7 +460,7 @@ img {
     line-height: 29px;
     font-weight: 700;
     text-align: center;
-    text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.12);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
     color: #ffffff; }
     @media (max-width: 767px) {
       .header__container p {
