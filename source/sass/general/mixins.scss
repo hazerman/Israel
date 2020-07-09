@@ -1,6 +1,6 @@
-@mixin font-size-height($f-size, $f-height) {
+@mixin size-height($f-size, $l-height) {
   font-size: $f-size;
-  line-height: $f-height;
+  line-height: $l-height;
 }
 
 @mixin until-full {
@@ -67,8 +67,9 @@
   margin-right: auto;
 }
 
-@mixin container {
-  @include pad-center($screen-padding);
+@mixin container($desk-pl: $screen-padding, $desk-pr: $screen-padding, $mob-pl: $screen-padding-mob, $mob-pr: $screen-padding-mob) {
+  padding-left: $desk-pl;
+  padding-right: $desk-pr;
   @include center;
   width: $full-width;
 
@@ -78,7 +79,8 @@
   }
 
   @include until-tablet {
-    @include pad-center($screen-padding-mob);
+    padding-left: $mob-pl;
+    padding-right: $mob-pr;
   }
 }
 
