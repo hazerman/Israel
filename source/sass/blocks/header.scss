@@ -1,0 +1,162 @@
+.header_container {
+  position: relative;
+
+  @include container(110px, 114px, 0, 0);
+  padding-bottom: 300px;
+  min-height: 906px;
+
+  background-color: #e9e7e1;
+  background-image: url("../img/bg-header-desktop@1x.jpg");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+
+  @include from-retina {
+    background-image: url("../img/bg-header-desktop@2x.jpg");
+  }
+
+  @include until-full {
+    background-size: auto 100%;
+  }
+
+  @include until-tablet {
+    padding-bottom: 248px;
+    min-height: 637px;
+
+    background-image: url("../img/bg-header-mobile@1x.jpg");
+    background-position: bottom center;
+    background-size: auto 95%;
+  }
+
+  &::after {
+    @include pseudo(absolute);
+    bottom: 13%;
+    left: 50%;
+
+    width: 76px;
+    height: 162px;
+
+    background-image: url("../img/bg-scroll@1x.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+    transform: translateX(-50%);
+
+    @include from-retina {
+      background-image: url("../img/bg-scroll@2x.png");
+    }
+
+    @include until-tablet {
+      bottom: 9.5%;
+    }
+  }
+
+  p {
+    @include reset-m-p;
+    @include center;
+    padding-left: 6px;
+    width: 352px;
+
+    @include size-height(24px, 29px);
+    font-weight: 700;
+    text-align: center;
+    text-shadow: 0px 1px 4px rgba($black, 0.12);
+    color: $white;
+
+    @include until-tablet {
+      @include pad-center(10px);
+      margin: 0;
+      width: 100%;
+
+      @include size-height(20px, 24px);
+    }
+  }
+}
+
+.header__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 455px;
+  padding-top: 32px;
+
+  @include size-height(15px, 18px);
+  font-weight: 500;
+  color: $dark;
+
+  @include until-tablet {
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-content: space-between;
+      padding-top: 20px;
+      padding-left: 16px;
+      padding-right: 8px;
+      margin-bottom: 269px;
+      max-height: 70px;
+
+      @include size-height(14px, 17px);
+
+      background-color: $white;
+    }
+
+  a[href] {
+    color: inherit;
+    text-decoration: none;
+
+    @include until-tablet {
+      order: 1;
+      margin-bottom: 10px;
+    }
+
+    &:hover {
+      @include from-desktop {
+        opacity: 0.7;
+      }
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
+  }
+
+  img {
+    width: 137px;
+    height: 48px;
+
+    @include until-tablet {
+      width: 120px;
+      height: 42px;
+    }
+  }
+
+  button {
+    padding: 0;
+    margin-left: 10px;
+
+    font-weight: inherit;
+    text-transform: uppercase;
+
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px dashed $dark;
+
+    cursor: pointer;
+
+    @include until-tablet {
+      order: 2;
+    }
+
+    &:hover {
+      @include from-desktop {
+        opacity: 0.7;
+      }
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
+  }
+}
