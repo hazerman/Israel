@@ -1,0 +1,94 @@
+@mixin font-size-height($f-size, $f-height) {
+  font-size: $f-size;
+  line-height: $f-height;
+}
+
+@mixin until-full {
+  @media (max-width: $full-width - 1) {
+    @content;
+  }
+}
+
+@mixin until-desktop {
+  @media (max-width: $desktop-width - 1) {
+    @content;
+  }
+}
+
+@mixin until-tablet {
+  @media (max-width: $tablet-width - 1) {
+    @content;
+  }
+}
+
+@mixin from-desktop {
+  @media (min-width: $desktop-width) {
+    @content;
+  }
+}
+
+@mixin only-full-width {
+  @media (min-width: $full-width) {
+    @content;
+  }
+}
+
+@mixin between-desktop-full {
+  @media (max-width: $full-width - 1) and (min-width: $desktop-width) {
+    @content;
+  }
+}
+
+@mixin from-retina {
+  @media (min-resolution: $retina) {
+    @content;
+  }
+}
+
+@mixin list {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+@mixin reset-m-p {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin pad-center($pad) {
+  padding-left: $pad;
+  padding-right: $pad;
+}
+
+@mixin center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin container {
+  @include pad-center($screen-padding);
+  @include center;
+  width: $full-width;
+
+  @include until-full {
+    width: 100%;
+    margin: 0;
+  }
+
+  @include until-tablet {
+    @include pad-center($screen-padding-mob);
+  }
+}
+
+@mixin pseudo($pos, $content: "") {
+  content: $content;
+
+  position: $pos;
+}
+
+@mixin current {
+  cursor: default;
+  pointer-events: none;
+}
