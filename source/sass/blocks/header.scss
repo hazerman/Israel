@@ -39,7 +39,6 @@
     background-image: url("../img/bg-scroll@1x.png");
     background-repeat: no-repeat;
     background-position: top center;
-    background-repeat: no-repeat;
     background-size: 100%;
 
     transform: translateX(-50%);
@@ -62,7 +61,7 @@
     @include size-height(24px, 29px);
     font-weight: 700;
     text-align: center;
-    text-shadow: 0px 1px 4px rgba($black, 0.12);
+    text-shadow: 0 1px 4px rgba($black, 0.12);
     color: $white;
 
     @include until-tablet {
@@ -87,20 +86,20 @@
   color: $dark;
 
   @include until-tablet {
-      flex-direction: column;
-      flex-wrap: wrap;
-      justify-content: flex-start;
-      align-content: space-between;
-      padding-top: 20px;
-      padding-left: 16px;
-      padding-right: 8px;
-      margin-bottom: 269px;
-      max-height: 70px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: space-between;
+    padding-top: 20px;
+    padding-left: 16px;
+    padding-right: 8px;
+    margin-bottom: 269px;
+    max-height: 70px;
 
-      @include size-height(14px, 17px);
+    @include size-height(14px, 17px);
 
-      background-color: $white;
-    }
+    background-color: $white;
+  }
 
   a[href] {
     color: inherit;
