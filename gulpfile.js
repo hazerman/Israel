@@ -72,8 +72,10 @@ gulp.task("html", function () {
 });
 
 gulp.task("copy", function() {
-  return gulp
-    .src(["source/fonts/**/*.{woff,woff2}"], {
+  return gulp.src([
+    "source/fonts/**/*.{woff,woff2}",
+    "source/img/**",
+    ], {
       base: "source"
     })
     .pipe(gulp.dest("build"));
@@ -110,7 +112,6 @@ gulp.task(
     "copy",
     "css",
     "js",
-    "images",
     "webp",
     "sprite",
     "html"
