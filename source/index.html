@@ -9,7 +9,7 @@
 </head>
 <body>
 
-  <div style="display: none;">
+  <div class="visually-hidden" aria-hidden="true">
     <include src="build/img/sprite.svg"></include>
   </div>
 
@@ -72,5 +72,50 @@
       </ul>
     </div>
   </footer>
+
+  <div class="popup" id="request">
+    <div class="popup__field">
+      <h2>Заказать звонок</h2>
+      <p>Оставьте ваши контактные данные, мы&nbsp;свяжемся с&nbsp;вами в течение рабочего дня и обязательно поможем найти ответ на ваш вопрос!</p>
+      <form class="form" action="POST" name="popup-form" id="popup-form">
+        <ul class="form__list form__list--column">
+          <li class="form__field">
+            <label class="visually-hidden" for="user-name-pop">Введите ваше имя</label>
+            <input type="text" name="user-name-pop" id="user-name-pop" placeholder="Имя" maxlength="20">
+          </li>
+          <li class="form__field">
+            <label class="visually-hidden" for="user-tel-pop">Введите ваш телефон</label>
+            <input type="tel" inputmode="tel" name="user-tel-pop" id="user-tel-pop" placeholder="Телефон">
+          </li>
+        </ul>
+        <div class="form__action-wrapper">
+          <div class="form__nda-field">
+            <input class="visually-hidden" type="checkbox" name="nda" id="nda">
+            <label for="nda">Нажимая на кнопку, вы даёте согласие на обработку персональных данных</label>
+          </div>
+          <button class="button" type="submit">Перезвоните мне</button>
+        </div>
+      </form>
+      <button class="popup__close-btn">
+        <span class="visually-hidden">Закрыть попап</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="popup" id="accepted">
+    <div class="popup__field popup__field--center">
+      <svg width="71" height="64" aria-hidden="true" focusable="false">
+        <use xlink:href="#icon-check"></use>
+      </svg>
+      <h2>Заявка принята</h2>
+      <p>Мы приняли ваши данные и вскоре мы перезвоним вам для уточнения деталей!</p>
+          <button class="button popup__button">Понятно</button>
+      <button class="popup__close-btn">
+        <span class="visually-hidden">Закрыть попап</span>
+      </button>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
