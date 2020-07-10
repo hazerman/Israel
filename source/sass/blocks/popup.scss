@@ -1,0 +1,142 @@
+.popup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+
+  display: none;
+
+  background-color: rgba(#ebebeb, 0.95);
+
+  &--show {
+    display: block;
+  }
+}
+
+.popup__field {
+  position: absolute;
+  top: 123px;
+  left: 50%;
+
+  width: 480px;
+  min-height: 521px;
+  padding: 56px 72px 40px 48px;
+
+  background-color: $white;
+  box-shadow: 0 3px 12px rgba($black, 0.1);
+  border-radius: 8px;
+
+  transform: translateX(-50%);
+
+  @include until-tablet {
+    position: relative;
+    top: auto;
+    left: auto;
+
+    width: 100%;
+    min-height: auto;
+    height: 100%;
+    padding: 20% 16px 30px;
+
+    text-align: center;
+
+    border-radius: 0;
+    box-shadow: none;
+
+    transform: none;
+  }
+
+  &--center {
+    text-align: center;
+
+    svg {
+      margin-top: 64px;
+      margin-bottom: 32px;
+    }
+  }
+
+  h2 {
+    @include reset-m-p;
+    margin-bottom: 16px;
+
+    @include size-height(28px, 34px);
+    font-family: $montserrat-font-stack;
+    font-weight: 700;
+    color: $blue;
+
+    @include until-tablet {
+      @include size-height(24px, 29px);
+    }
+  }
+
+  p {
+    @include reset-m-p;
+    margin-bottom: 32px;
+
+    @include size-height(15px, 26px);
+    color: rgba($dark, 0.87);
+
+    @include until-tablet {
+      @include size-height(14px, 22px);
+    }
+  }
+}
+
+.popup__close-btn {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+
+  width: 18px;
+  height: 18px;
+  padding: 0;
+
+  background-color: transparent;
+  border: none;
+
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    @include pseudo(absolute);
+
+    top: 46%;
+    left: -3px;
+
+    width: 134%;
+    height: 2px;
+
+    background-color: $yellow;
+    background-image: $gradient-default;
+  }
+
+  &::before {
+    transform: rotate(-44deg);
+  }
+
+  &::after {
+    transform: rotate(44deg);
+  }
+
+  &:hover {
+    &::before,
+    &::after {
+      @include from-desktop {
+        background-image: $gradient-hover;
+      }
+    }
+  }
+
+  &:active {
+    &::before,
+    &::after {
+      background-image: $gradient-active;
+    }
+  }
+}
+
+.popup__button {
+  width: 264px;
+}
