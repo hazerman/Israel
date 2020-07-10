@@ -1,0 +1,97 @@
+.form__list {
+  @include list;
+
+  &--column {
+    margin-bottom: 24px;
+
+    li {
+      + li {
+        margin-top: 8px;
+      }
+    }
+  }
+}
+
+.form__field {
+  input {
+    width: 100%;
+    min-height: 59px;
+    padding: 17px 40px;
+
+    @include size-height(17px, 20px);
+    font-weight: 500;
+    color: rgba($dark, 0.87);
+    text-transform: uppercase;
+
+    border: 2px solid #e3e3e3;
+    border-radius: 80px;
+
+    &:focus {
+      outline: none;
+
+      border-color: transparent;
+      background-origin: border-box;
+      background-clip: padding-box, border-box;
+      background-image: linear-gradient(white, white), $gradient-default;
+    }
+
+    &::placeholder {
+      color: rgba($dark, 0.5);
+    }
+  }
+}
+
+.form__action-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding-left: 60px;
+  padding-right: 36px;
+
+  @include until-tablet {
+    @include pad-center(12px);
+  }
+}
+
+.form__nda-field {
+  order: 1;
+  margin-top: 16px;
+
+  @include size-height(13px, 19px);
+  color: rgba($dark, 0.74);
+
+  input:checked {
+    + label {
+      &::before {
+        background-image: $gradient-default;
+      }
+    }
+  }
+
+  label {
+    position: relative;
+
+    display: block;
+    padding-left: 24px;
+
+    cursor: pointer;
+
+    @include until-tablet {
+      text-align: left;
+    }
+
+    &::before {
+      @include pseudo(absolute);
+      top: 0;
+      left: 0;
+
+      display: block;
+      width: 16px;
+      height: 16px;
+
+      border: 2px solid transparent;
+      background-origin: border-box;
+      background-clip: content-box, border-box;
+      background-image: linear-gradient(white, white), $gradient-default;
+    }
+  }
+}
