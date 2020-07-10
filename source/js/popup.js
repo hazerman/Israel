@@ -57,4 +57,3 @@
     remove: removePopup
   };
 })();
-
