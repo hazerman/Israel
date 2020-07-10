@@ -39,6 +39,12 @@
   }
 }
 
+@mixin between-tablet-desktop {
+  @media (max-width: $desktop-width - 1) and (min-width: $tablet-width) {
+    @content;
+  }
+}
+
 @mixin from-retina {
   @media (min-resolution: $retina) {
     @content;
@@ -94,4 +100,37 @@
 @mixin current {
   cursor: default;
   pointer-events: none;
+}
+
+
+@mixin headers {
+  @include reset-m-p;
+  @include size-height(40px, 49px);
+  font-family: $montserrat-font-stack;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: $blue;
+  letter-spacing: -0.02em;
+
+  @include until-tablet {
+    @include size-height(32px, 39px);
+  }
+}
+
+@mixin text-big {
+  @include reset-m-p;
+  @include size-height(17px, 29px);
+
+  @include until-tablet {
+    @include size-height(16px, 26px);
+  }
+}
+
+@mixin text-regular {
+  @include reset-m-p;
+  @include size-height(15px, 26px);
+
+  @include until-tablet {
+    @include size-height(14px, 22px);
+  }
 }
