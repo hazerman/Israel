@@ -2,8 +2,8 @@
   position: relative;
 
   @include container(110px, 114px, 0, 0);
-  padding-bottom: 300px;
-  min-height: 906px;
+  padding-bottom: 237px;
+  min-height: 855px;
 
   background-color: #e9e7e1;
   background-image: url("../img/bg-header-desktop@1x.jpg");
@@ -20,17 +20,21 @@
   }
 
   @include until-tablet {
-    padding-bottom: 248px;
-    min-height: 637px;
+    padding-bottom: 225px;
+    min-height: 619px;
 
     background-image: url("../img/bg-header-mobile@1x.jpg");
     background-position: bottom center;
     background-size: auto 95%;
+
+    @include from-retina {
+      background-image: url("../img/bg-header-mobile@2x.jpg");
+    }
   }
 
   &::after {
     @include pseudo(absolute);
-    bottom: 13%;
+    bottom: 7.6%;
     left: 50%;
 
     width: 76px;
@@ -48,7 +52,7 @@
     }
 
     @include until-tablet {
-      bottom: 9.5%;
+      bottom: 6.7%;
     }
   }
 
