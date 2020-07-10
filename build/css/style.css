@@ -374,6 +374,27 @@ img {
   clip: rect(0 0 0 0);
   overflow: hidden; }
 
+.button {
+  min-height: 59px;
+  padding: 19px 30px;
+  font-size: 17px;
+  line-height: 20px;
+  font-weight: 500;
+  color: #ffffff;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+  background-color: #ffc341;
+  background-image: linear-gradient(142.39deg, #ffc341 20.46%, #ffd701 65.31%);
+  border: none;
+  border-radius: 80px;
+  cursor: pointer; }
+  @media (min-width: 1024px) {
+    .button:hover {
+      background-image: linear-gradient(143.55deg, #ffc341 -50.3%, #ffd701 63.1%); } }
+  .button:active {
+    background-image: radial-gradient(150% 119.49% at 50% 50.85%, rgba(0, 0, 0, 0) 30.67%, rgba(3, 3, 3, 0.24) 100%), linear-gradient(143.55deg, #ffc341 -50.3%, #ffd701 63.1%); }
+
 .social {
   margin: 0;
   padding: 0;
@@ -394,6 +415,89 @@ img {
   .social svg {
     width: 24px;
     height: 24px; }
+
+.form__list {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+  .form__list--column {
+    margin-bottom: 24px; }
+    .form__list--column li + li {
+      margin-top: 8px; }
+
+.form__field input {
+  width: 100%;
+  min-height: 59px;
+  padding: 17px 40px;
+  font-size: 17px;
+  line-height: 20px;
+  font-weight: 500;
+  color: rgba(72, 72, 72, 0.87);
+  text-transform: uppercase;
+  border: 2px solid #e3e3e3;
+  border-radius: 80px; }
+  .form__field input:focus {
+    outline: none;
+    border-color: transparent;
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    background-image: linear-gradient(white, white), linear-gradient(142.39deg, #ffc341 20.46%, #ffd701 65.31%); }
+  .form__field input::-webkit-input-placeholder {
+    color: rgba(72, 72, 72, 0.5); }
+  .form__field input::-moz-placeholder {
+    color: rgba(72, 72, 72, 0.5); }
+  .form__field input:-ms-input-placeholder {
+    color: rgba(72, 72, 72, 0.5); }
+  .form__field input::-ms-input-placeholder {
+    color: rgba(72, 72, 72, 0.5); }
+  .form__field input::placeholder {
+    color: rgba(72, 72, 72, 0.5); }
+
+.form__action-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-left: 60px;
+  padding-right: 36px; }
+  @media (max-width: 767px) {
+    .form__action-wrapper {
+      padding-left: 12px;
+      padding-right: 12px; } }
+
+.form__nda-field {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  margin-top: 16px;
+  font-size: 13px;
+  line-height: 19px;
+  color: rgba(72, 72, 72, 0.74); }
+  .form__nda-field input:checked + label::before {
+    background-image: linear-gradient(142.39deg, #ffc341 20.46%, #ffd701 65.31%); }
+  .form__nda-field label {
+    position: relative;
+    display: block;
+    padding-left: 24px;
+    cursor: pointer; }
+    @media (max-width: 767px) {
+      .form__nda-field label {
+        text-align: left; } }
+    .form__nda-field label::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 16px;
+      height: 16px;
+      border: 2px solid transparent;
+      background-origin: border-box;
+      background-clip: content-box, border-box;
+      background-image: linear-gradient(white, white), linear-gradient(142.39deg, #ffc341 20.46%, #ffd701 65.31%); }
 
 .header__container {
   position: relative;
@@ -616,3 +720,107 @@ img {
     .footer__social svg {
       width: 32px;
       height: 32px; } }
+
+.popup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  display: none;
+  background-color: rgba(235, 235, 235, 0.95); }
+  .popup--show {
+    display: block; }
+
+.popup__field {
+  position: absolute;
+  top: 123px;
+  left: 50%;
+  width: 480px;
+  min-height: 521px;
+  padding: 56px 72px 40px 48px;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%); }
+  @media (max-width: 767px) {
+    .popup__field {
+      position: relative;
+      top: auto;
+      left: auto;
+      width: 100%;
+      min-height: auto;
+      height: 100%;
+      padding: 20% 16px 30px;
+      text-align: center;
+      border-radius: 0;
+      -webkit-box-shadow: none;
+              box-shadow: none;
+      -webkit-transform: none;
+              transform: none; } }
+  .popup__field--center {
+    text-align: center; }
+    .popup__field--center svg {
+      margin-top: 64px;
+      margin-bottom: 32px; }
+  .popup__field h2 {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 16px;
+    font-size: 28px;
+    line-height: 34px;
+    font-family: "Montserrat", "Arial Narrow", "Arial", sans-serif;
+    font-weight: 700;
+    color: #1fc0fc; }
+    @media (max-width: 767px) {
+      .popup__field h2 {
+        font-size: 24px;
+        line-height: 29px; } }
+  .popup__field p {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 32px;
+    font-size: 15px;
+    line-height: 26px;
+    color: rgba(72, 72, 72, 0.87); }
+    @media (max-width: 767px) {
+      .popup__field p {
+        font-size: 14px;
+        line-height: 22px; } }
+
+.popup__close-btn {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer; }
+  .popup__close-btn::before, .popup__close-btn::after {
+    content: "";
+    position: absolute;
+    top: 46%;
+    left: -3px;
+    width: 134%;
+    height: 2px;
+    background-color: #ffc341;
+    background-image: linear-gradient(142.39deg, #ffc341 20.46%, #ffd701 65.31%); }
+  .popup__close-btn::before {
+    -webkit-transform: rotate(-44deg);
+            transform: rotate(-44deg); }
+  .popup__close-btn::after {
+    -webkit-transform: rotate(44deg);
+            transform: rotate(44deg); }
+  @media (min-width: 1024px) {
+    .popup__close-btn:hover::before, .popup__close-btn:hover::after {
+      background-image: linear-gradient(143.55deg, #ffc341 -50.3%, #ffd701 63.1%); } }
+  .popup__close-btn:active::before, .popup__close-btn:active::after {
+    background-image: radial-gradient(150% 119.49% at 50% 50.85%, rgba(0, 0, 0, 0) 30.67%, rgba(3, 3, 3, 0.24) 100%), linear-gradient(143.55deg, #ffc341 -50.3%, #ffd701 63.1%); }
+
+.popup__button {
+  width: 264px; }
