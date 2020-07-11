@@ -1,0 +1,246 @@
+.programms__container {
+  @include container(210px, 210px, 0, 0);
+  padding-top: 104px;
+  padding-bottom: 10px;
+
+  background-image: url("../img/bg-city-1-desktop@1x.png");
+  background-position: top 56px right;
+  background-repeat: no-repeat;
+  background-size: 680px auto;
+
+  @include from-retina {
+    background-image: url("../img/bg-city-1-desktop@2x.png");
+  }
+
+  @include between-tablet-desktop {
+    @include pad-center(10%);
+  }
+
+  @include until-tablet {
+    padding-top: 35px;
+    padding-bottom: 20px;
+
+    background-image: url("../img/bg-city-1-mobile@1x.png");
+    background-size: 320px auto;
+    background-position: top 153px right -54px;
+  }
+
+  h2 {
+    @include headers;
+    margin-bottom: 67px;
+
+    @include until-tablet {
+      @include pad-center($screen-padding-mob);
+      margin-bottom: 16px;
+
+      text-align: center;
+    }
+  }
+}
+
+.programms__wrapper {
+  display: flex;
+
+  @include until-tablet {
+    display: block;
+  }
+}
+
+.programms__tabs-list {
+  @include list;
+  width: 228px;
+  margin-right: 64px;
+
+  @include until-tablet {
+    overflow-x: scroll;
+    display: flex;
+    width: auto;
+    margin-bottom: 32px;
+    margin-right: 0;
+  }
+}
+
+.programms__tabs-item {
+  min-height: 68px;
+  padding: 16px 20px;
+  margin-bottom: 4px;
+
+  @include until-tablet {
+    min-height: 48px;
+    padding: 6px 12px;
+    margin-bottom: 0;
+  }
+
+  &--current {
+    position: relative;
+    background-image: $gradient-default;
+
+    @include until-tablet {
+      border-radius: 60px;
+    }
+
+    &::before,
+    &::after {
+      @include pseudo(absolute);
+      right: 0;
+
+      width: 0;
+      height: 0;
+
+      border: 30px solid transparent;
+      border-right-color: $white;
+      border-left-width: 0;
+
+      @include until-tablet {
+        display: none;
+      }
+    }
+
+    &::before {
+      top: 0;
+
+      border-top-width: 0;
+      border-bottom-width: 34px;
+    }
+
+    &::after {
+      bottom: 0;
+
+      border-bottom-width: 0;
+      border-top-width: 34px;
+    }
+
+    .programms__tabs-link {
+      @include current;
+      @include size-height(17px, 19px);
+      font-weight: 500;
+      text-transform: lowercase;
+      font-variant: small-caps;
+      color: $white;
+      letter-spacing: 1.7px;
+      text-shadow: 0 1px 4px rgba($black, 0.12);
+
+      &::before {
+        background-position-y: -132px;
+      }
+    }
+  }
+}
+
+.programms__tabs-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  @include size-height(15px, 18px);
+  color: inherit;
+  text-decoration: none;
+
+  &::before {
+    @include pseudo(relative);
+
+    width: 36px;
+    height: 36px;
+    margin-right: 16px;
+
+    background-image: url("../img/bg-sprite.png");
+    background-position-y: -20px;
+
+    @include until-tablet {
+      margin-right: 8px;
+    }
+  }
+
+  &:hover {
+    @include from-desktop {
+      color: $yellow;
+    }
+
+    &::before {
+      @include from-desktop {
+        background-position-y: -76px;
+      }
+    }
+  }
+
+  &--common {
+    &::before {
+      background-position-x: -20px;
+    }
+  }
+
+  &--academy {
+    &::before {
+      background-position-x: -96px;
+    }
+  }
+
+  &--intern {
+    &::before {
+      background-position-x: -172px;
+    }
+  }
+
+  &--volunt {
+    &::before {
+      background-position-x: -248px;
+    }
+  }
+
+  &--religy {
+    &::before {
+      background-position-x: -324px;
+    }
+  }
+}
+
+.programms__list {
+  @include list;
+  width: 560px;
+  padding-top: 16px;
+
+  @include until-tablet {
+    @include pad-center($screen-padding-mob);
+    width: auto;
+    padding-top: 0;
+  }
+
+  &--no-js {
+    .programms__item {
+      display: block;
+    }
+  }
+}
+
+.programms__item {
+  display: none;
+
+  &--current {
+    display: block;
+  }
+
+  h3 {
+    @include reset-m-p;
+    margin-bottom: 24px;
+
+    @include size-height(28px, 34px);
+    font-family: $montserrat-font-stack;
+    font-weight: 700;
+    color: $blue;
+    letter-spacing: -0.02em;
+
+    @include until-tablet {
+      margin-bottom: 17px;
+
+      @include size-height(24px, 29px);
+    }
+  }
+
+  p {
+    @include text-regular;
+
+    + p {
+      margin-top: 15px;
+    }
+  }
+}
