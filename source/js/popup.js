@@ -8,7 +8,7 @@
   var closeButton;
   var acceptButton;
 
-  var callButton = document.querySelector('.header__info button');
+  var callButton = document.querySelector('.header__call-button');
 
   var removePopup = function () {
     currentPopup.classList.remove(SHOWN_POPUP);
@@ -49,7 +49,8 @@
     document.addEventListener('keydown', onEscPress);
   };
 
-  callButton.addEventListener('click', function () {
+  callButton.addEventListener('click', function (evt) {
+    evt.preventDefault();
     showPopup(popupRequest);
   });
 
