@@ -19,7 +19,7 @@
   var closeButton;
   var acceptButton;
 
-  var callButton = document.querySelector('.header__info button');
+  var callButton = document.querySelector('.header__call-button');
 
   var removePopup = function () {
     currentPopup.classList.remove(SHOWN_POPUP);
@@ -60,13 +60,43 @@
     document.addEventListener('keydown', onEscPress);
   };
 
-  callButton.addEventListener('click', function () {
+  callButton.addEventListener('click', function (evt) {
+    evt.preventDefault();
     showPopup(popupRequest);
   });
 
   window.popup = {
     remove: removePopup
   };
+})();
+
+'use strict';
+
+(function () {
+  var CURRENT_MOD = '--current';
+  var tabButtonsArea = document.querySelector('.programms__tabs-list');
+  var tabButtons = tabButtonsArea.querySelectorAll('.programms__tabs-item');
+
+  var programmArea = document.querySelector('.programms__list');
+  var programmItems = programmArea.querySelectorAll('.programms__item');
+  var currentIndex = 1;
+
+  var changeTab = function (newIndex) {
+    tabButtons[currentIndex].classList.remove('programms__tabs-item' + CURRENT_MOD);
+    programmItems[currentIndex].classList.remove('programms__item' + CURRENT_MOD);
+    tabButtons[newIndex].classList.add('programms__tabs-item' + CURRENT_MOD);
+    programmItems[newIndex].classList.add('programms__item' + CURRENT_MOD);
+    currentIndex = newIndex;
+  };
+
+  tabButtonsArea.addEventListener('click', function (evt) {
+    evt.preventDefault();
+    var target = evt.target.closest('a');
+    if (target) {
+      var tabButtonsIndex = Array.from(tabButtons).indexOf(target.closest('li'));
+      changeTab(tabButtonsIndex);
+    }
+  });
 })();
 
 'use strict';
