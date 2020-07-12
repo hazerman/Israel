@@ -45,6 +45,12 @@
   }
 }
 
+@mixin between-tablet-full {
+  @media (max-width: $full-width - 1) and (min-width: $tablet-width) {
+    @content;
+  }
+}
+
 @mixin from-retina {
   @media (min-resolution: $retina) {
     @content;
@@ -114,6 +120,7 @@
 
   @include until-tablet {
     @include size-height(32px, 39px);
+    text-align: center;
   }
 }
 
