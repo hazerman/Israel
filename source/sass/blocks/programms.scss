@@ -32,8 +32,6 @@
     @include until-tablet {
       @include pad-center($screen-padding-mob);
       margin-bottom: 16px;
-
-      text-align: center;
     }
   }
 }
