@@ -1,3 +1,7 @@
+.form {
+  position: relative;
+}
+
 .form__list {
   @include list;
 
@@ -92,6 +96,25 @@
       background-origin: border-box;
       background-clip: content-box, border-box;
       background-image: linear-gradient(white, white), $gradient-default;
+    }
+  }
+}
+
+.form__button {
+  width: 216px;
+
+  &--overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    @include until-tablet {
+      position: static;
+
+      width: 91.5%;
+      margin-top: 8px;
+      margin-right: 10px;
+      margin-left: 12px;
     }
   }
 }
