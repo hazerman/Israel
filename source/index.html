@@ -126,14 +126,15 @@
 
     <div class="bg-wrapper">
       <div class="bg-wrapper__container">
+
         <div class="travel">
           <div class="travel__desire">
             <h2>Хочу поехать!</h2>
             <p>Оставьте свой телефон и мы свяжемся с вами, подберём куратора и ответим на все вопросы!</p>
-            <form class="form travel__form" action="POST">
+            <form class="form travel__form" action="POST" name="form-travel" id="form-travel">
               <div class="form__field">
-                <label class="visually-hidden" for="user-tel-pop">Введите ваш телефон</label>
-                <input type="tel" inputmode="tel" name="user-tel-pop" id="user-tel-pop" placeholder="Телефон">
+                <label class="visually-hidden" for="user-tel-travel">Введите ваш телефон</label>
+                <input type="tel" inputmode="tel" name="user-tel-travel" id="user-tel-travel" placeholder="Телефон">
               </div>
               <button class="button form__button form__button--overlay" type="submit">Перезвоните мне</button>
             </form>
@@ -153,6 +154,63 @@
             принять участие в программе «Маса», оплатив её полную стоимость.</p>
           </section>
         </div>
+        <section class="life">
+          <div class="life__promo">
+            <h2>Жизнь в&nbsp;Израиле</h2>
+            <p>Помимо учёбы, в рамках программы у вас будет возможность путешествовать по стране и познакомиться с богатой
+            культурно‑исторической жизнью Израиля и его жителей.</p>
+            <div class="life__features">
+              <div class="life__slider" id="swipe-slider">
+                <div class="life__layout life__layout--big-1-3 life__layout--tour" data-swipe-slide="true">
+                  <span>Экскурсии по Израилю и&nbsp;знакомство&nbsp;с&nbsp;его историей</span>
+                </div>
+                <div class="life__layout life__layout--big-2-3">
+                  <div class="life__layout life__layout--small-1-3 life__layout--study" data-swipe-slide="false">
+                    <span>Изучение иврита</span>
+                  </div>
+                  <div class="life__layout life__layout--small-2-3 life__layout--teaching" data-swipe-slide="false">
+                    <span>Обучение современным навыкам&nbsp;и профессиям</span>
+                  </div>
+                  <div class="life__layout life__layout--small-2-3 life__layout--creation" data-swipe-slide="false">
+                    <span>Совместные творческие проекты с израильской молодёжью</span>
+                  </div>
+                  <div class="life__layout life__layout--small-1-3 life__layout--leading" data-swipe-slide="false">
+                    <span>Развитие лидерства</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <ul class="life__dot-list">
+              <li class="life__dot-item life__dot-item--current">
+                <span class="visually-hidden">1 слайд</span>
+              </li>
+              <li class="life__dot-item">
+                <span class="visually-hidden">2 слайд</span>
+              </li>
+              <li class="life__dot-item">
+                <span class="visually-hidden">3 слайд</span>
+              </li>
+              <li class="life__dot-item">
+                <span class="visually-hidden">4 слайд</span>
+              </li>
+              <li class="life__dot-item">
+                <span class="visually-hidden">5 слайд</span>
+              </li>
+            </ul>
+          </div>
+          <div class="life__photo">
+            <div class="life__photo-item">
+              <span>#masaisrael</span>
+              <p>Познакомьтесь с программой от&nbsp;первого лица! Многие участники ведут блоги и фотодневники о&nbsp;жизни, учёбе и путешествиях в&nbsp;Израиле.</p>
+              <button class="button button--icon life__button" type="button">
+                <svg width="24" height="24" aria-hidden="true" focusable="false">
+                  <use xlink:href="#icon-instagram"></use>
+                </svg>
+                Смотреть фото
+              </button>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   </main>
@@ -236,7 +294,7 @@
       </svg>
       <h2>Заявка принята</h2>
       <p>Мы приняли ваши данные и вскоре мы перезвоним вам для уточнения деталей!</p>
-          <button class="button popup__button">Понятно</button>
+      <button class="button popup__button" type="button">Понятно</button>
       <button class="popup__close-btn">
         <span class="visually-hidden">Закрыть попап</span>
       </button>
