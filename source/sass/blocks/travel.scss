@@ -66,23 +66,21 @@
   padding: 191px 130px 130px 699px;
 
   background-image: url("../img/bg-stamp-desktop@1x.png"),
-    url("../img/bg-people-1-desktop@1x.png"),
-    url("../img/bg-travel-desktop@1x.png");
+    url("../img/bg-people-1-desktop@1x.png");
   background-repeat: no-repeat;
-  background-size: 337px auto, 581px auto, 100% auto;
-  background-position: top 370px right -121px, top 160px left 12px, top -40px center;
+  background-size: 337px auto, 581px auto;
+  background-position: top 370px right -121px, top 160px left 12px;
 
   @include from-retina {
     background-image: url("../img/bg-stamp-desktop@2x.png"),
-      url("../img/bg-people-1-desktop@2x.png"),
-      url("../img/bg-travel-desktop@2x.png");
+      url("../img/bg-people-1-desktop@2x.png");
   }
 
   @include between-tablet-full {
     padding-left: 40%;
     padding-right: 5%;
-    background-size: 337px auto, 38% auto, 100% auto;
-    background-position: top 370px right -121px, top 160px left 12px, top 8% center;
+    background-size: 337px auto, 38% auto;
+    background-position: top 370px right -121px, top 160px left 12px;
   }
 
   @include until-tablet {

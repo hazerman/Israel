@@ -1,3 +1,16 @@
 .bg-wrapper__container {
   @include container(0, 0, 0, 0);
+
+  background-image: url("../img/bg-travel-desktop@1x.png");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: top 555px center;
+
+  @include from-retina {
+    background-image: url("../img/bg-travel-desktop@2x.png");
+  }
+
+  @include until-tablet {
+    background: none;
+  }
 }

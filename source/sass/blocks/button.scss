@@ -16,6 +16,20 @@
 
   cursor: pointer;
 
+  &--icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 18px;
+    padding-bottom: 17px;
+
+    svg {
+      margin-right: 8px;
+
+      fill: $white;
+    }
+  }
+
   &:hover {
     @include from-desktop {
       background-image: $gradient-hover;

@@ -1,0 +1,348 @@
+.life__promo {
+  position: relative;
+
+  padding: 68px 104px 64px 104px;
+  margin-bottom: 76px;
+
+  background-image:
+    url("../img/bg-life-wrapper-desktop@1x.png"),
+    url("../img/bg-watch-desktop@1x.png");
+  background-repeat: no-repeat;
+  background-position: top 25px center, top 681px right -34px;
+  background-size: 100% auto, 124px auto;
+
+  @include from-retina {
+    background-image:
+      url("../img/bg-life-wrapper-desktop@2x.png"),
+      url("../img/bg-watch-desktop@2x.png");
+  }
+
+  @include between-tablet-desktop {
+    @include pad-center(5px);
+  }
+
+  @include until-tablet {
+    padding: 33px $screen-padding-mob 23px;
+    margin-bottom: 27px;
+
+    background: none;
+  }
+
+  h2 {
+    @include headers;
+    margin-bottom: 24px;
+
+    text-align: center;
+  }
+
+  p {
+    @include text-big;
+    position: relative;
+    z-index: 2;
+
+    margin-left: 18%;
+    width: 62.18%;
+    text-align: right;
+
+    @include between-tablet-full {
+      @include center;
+      text-align: center;
+    }
+
+    @include until-tablet {
+      width: 100%;
+      margin-bottom: 24px;
+      margin-left: 0;
+
+      text-align: left;
+    }
+  }
+}
+
+.life__features {
+  position: relative;
+  top: -21px;
+
+  width: 99.4819%;
+
+  @include until-tablet {
+    position: static;
+
+    width: 100%;
+    margin-bottom: 16px;
+
+    overflow-x: hidden;
+  }
+}
+
+.life__slider {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  @include until-tablet {
+    transition: transform 200ms ease-in;
+  }
+}
+
+.life__layout {
+  position: relative;
+  height: 0;
+
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  span {
+    position: absolute;
+    bottom: 32px;
+    left: 0;
+    right: 0;
+
+    padding-left: 8.2%;
+    padding-right: 5%;
+
+    @include size-height(21px, 25px);
+    font-family: $raleway-font-stack;
+    font-weight: 800;
+    color: $white;
+    text-shadow: 0 1px 4px rgba($black, 0.12);
+
+    @include until-tablet {
+      bottom: 5.9%;
+
+      @include pad-center(18px);
+      @include size-height(18px, 21px);
+      text-align: center;
+    }
+  }
+
+  &--big-1-3 {
+    width: 41.841%;
+    padding-bottom: 63.5417%;
+  }
+
+  &--big-2-3 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    width: 56.8577%;
+    height: auto;
+    padding-top: 5.816%;
+
+    @include until-tablet {
+      flex-wrap: nowrap;
+      padding-top: 0;
+    }
+  }
+
+  &--small-1-3 {
+    width: 32.2138%;
+    padding-bottom: 48.5497%;
+
+    span {
+      padding-left: 11.1%;
+      padding-right: 6%;
+    }
+  }
+
+  &--small-2-3 {
+    width: 63.207%;
+    padding-bottom: 48.5497%;
+  }
+
+  &--tour {
+    background-image: url("../img/bg-life-1-desktop@1x.png");
+
+    @include from-retina {
+      background-image: url("../img/bg-life-1-desktop@2x.png");
+    }
+
+    @include until-tablet {
+      background-image: url("../img/bg-life-1-mobile@1x.png");
+
+      @include from-retina {
+        background-image: url("../img/bg-life-1-mobile@2x.png");
+      }
+    }
+  }
+
+  &--study {
+    background-image: url("../img/bg-life-2-desktop@1x.png");
+
+    @include from-retina {
+      background-image: url("../img/bg-life-2-desktop@2x.png");
+    }
+
+    @include until-tablet {
+      background-image: url("../img/bg-life-2-mobile@1x.png");
+
+      @include from-retina {
+        background-image: url("../img/bg-life-2-mobile@2x.png");
+      }
+    }
+  }
+
+  &--teaching {
+    background-image: url("../img/bg-life-3-desktop@1x.png");
+
+    @include from-retina {
+      background-image: url("../img/bg-life-3-desktop@2x.png");
+    }
+
+    @include until-tablet {
+      background-image: url("../img/bg-life-3-mobile@1x.png");
+
+      @include from-retina {
+        background-image: url("../img/bg-life-3-mobile@2x.png");
+      }
+    }
+  }
+
+  &--creation {
+    background-image: url("../img/bg-life-4-desktop@1x.png");
+
+    @include from-retina {
+      background-image: url("../img/bg-life-4-desktop@2x.png");
+    }
+
+    @include until-tablet {
+      background-image: url("../img/bg-life-4-mobile@1x.png");
+
+      @include from-retina {
+        background-image: url("../img/bg-life-4-mobile@2x.png");
+      }
+    }
+  }
+
+  &--leading {
+    background-image: url("../img/bg-life-5-desktop@1x.png");
+
+    @include from-retina {
+      background-image: url("../img/bg-life-5-desktop@2x.png");
+    }
+
+    @include until-tablet {
+      background-image: url("../img/bg-life-5-mobile@1x.png");
+
+      @include from-retina {
+        background-image: url("../img/bg-life-5-mobile@2x.png");
+      }
+    }
+  }
+
+  @include until-tablet {
+    width: 100%;
+    flex-shrink: 0;
+  }
+
+  &:not(.life__layout--big-2-3) {
+    @include until-tablet {
+      padding-bottom: 138.89%;
+    }
+  }
+}
+
+.life__dot-list {
+  display: none;
+
+  @include until-tablet {
+    @include list;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-left: -3px;
+  }
+}
+
+.life__dot-item {
+  width: 8px;
+  height: 8px;
+  margin-left: 6px;
+
+  background-color: rgba($black, 0.2);
+  background-clip: padding-box;
+  border: 1px solid transparent;
+  border-radius: 50%;
+
+  &--current {
+    background-color: $yellow;
+    background-image: $gradient-default;
+    background-clip: border-box;
+  }
+}
+
+.life__photo {
+  padding: 120px 12.2255%;
+  min-height: 583px;
+
+  background-image: url("../img/bg-hashtag-desktop@1x.jpg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: auto 583px;
+
+  @include from-retina {
+    background-image: url("../img/bg-hashtag-desktop@2x.jpg");
+  }
+
+  @include until-tablet {
+    padding: 30px 0;
+    min-height: auto;
+
+    background-image: url("../img/bg-hashtag-mobile@1x.jpg");
+    background-position: top 74px left 22.1%;
+    background-size: auto 272px;
+
+    @include from-retina {
+      background-image: url("../img/bg-hashtag-mobile@2x.jpg");
+    }
+  }
+}
+
+.life__photo-item {
+  width: 403px;
+  margin-left: auto;
+
+  @include until-tablet {
+    width: 100%;
+  }
+
+  span {
+    @include headers;
+    display: block;
+    margin-bottom: 24px;
+
+    @include until-tablet {
+      padding-left: 11px;
+      padding-right: 13px;
+      margin-bottom: 96px;
+
+      @include size-height(40px, 49px);
+    }
+  }
+
+  p {
+    @include text-big;
+    margin-bottom: 48px;
+    padding-left: 3px;
+
+    color: $white;
+    text-shadow: 0 1px 4px rgba($black, 0.12);
+
+    @include until-tablet {
+      margin-bottom: 57px;
+
+      padding-left: 7.1875%;
+      padding-right: 8%;
+    }
+  }
+}
+
+.life__button {
+  width: 230px;
+
+  @include until-tablet {
+    @include center;
+    width: 264px;
+  }
+}
