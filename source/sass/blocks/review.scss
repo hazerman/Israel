@@ -1,0 +1,254 @@
+.review__container {
+  @include container(98px, 184px);
+  padding-top: 27px;
+  padding-bottom: 30px;
+
+  background-image: url("../../img/bg-city-2-desktop@1x.png"),
+    url("../../img/bg-reviews-desktop@1x.png");
+  background-repeat: no-repeat;
+  background-size: 535px auto, 92.1669% auto;
+  background-position: top 83px right -12px, top 65px right;
+
+  @include from-retina {
+    background-image: url("../../img/bg-city-2-desktop@2x.png"),
+      url("../../img/bg-reviews-desktop@2x.png");
+  }
+
+  @include until-tablet {
+    padding-top: 59px;
+    padding-bottom: 20px;
+
+    background-image: url("../../img/bg-city-2-mobile@1x.png"),
+      url("../../img/bg-reviews-mobile@1x.png");
+    background-size: 439px auto, auto 468px;
+    background-position: top 585px right -151px, bottom 60px right -59px;
+
+    @include from-retina {
+      background-image: url("../../img/bg-city-2-mobile@2x.png"),
+        url("../../img/bg-reviews-mobile@2x.png");
+    }
+  }
+
+  h2 {
+    @include headers;
+    padding-left: 85px;
+    margin-bottom: 8px;
+
+    text-align: center;
+
+    @include until-tablet {
+      padding-left: 0;
+      margin-bottom: 24px;
+    }
+  }
+}
+
+.review__main-wrapper {
+  display: flex;
+
+  @include until-tablet {
+    flex-direction: column;
+  }
+}
+
+.review__photo-list {
+  @include list;
+  flex-shrink: 0;
+  width: 364px;
+  margin-right: 40px;
+
+  @include until-tablet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
+.review__photo-item {
+  display: none;
+
+  @include until-tablet {
+    width: 240px;
+    margin-bottom: 6px;
+  }
+
+  &--current {
+    display: block;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.review__info-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  padding-top: 40px;
+
+  color: rgba($dark, 0.74);
+
+  @include until-tablet {
+    flex-direction: column;
+    padding-top: 0;
+  }
+}
+
+.review__comment-list {
+  @include list;
+  width: 100%;
+}
+
+
+.review__comment-item {
+  display: none;
+  margin-bottom: 50px;
+
+  @include until-tablet {
+    margin-bottom: 21px;
+  }
+
+  &--current {
+    display: block;
+  }
+
+  p {
+    @include text-big;
+    margin-bottom: 16px;
+
+    &:last-of-type {
+      @include until-tablet {
+        margin-bottom: 25px;
+      }
+    }
+  }
+
+  a {
+    @include size-height(17px, 25px);
+    color: $blue;
+
+    @include until-tablet {
+      @include size-height(16px, 24px);
+    }
+
+    &:hover {
+      @include from-desktop {
+        opacity: 0.7;
+      }
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
+  }
+}
+
+.review__name {
+  display: block;
+  margin-bottom: 9px;
+
+  @include size-height(24px, 36px);
+  font-weight: 500;
+}
+
+.review__programm {
+  display: block;
+  margin-bottom: 32px;
+
+  @include size-height(15px, 21px);
+
+  @include until-tablet {
+    margin-bottom: 24px;
+
+    @include size-height(14px, 22px);
+  }
+
+  span {
+    margin-right: 5px;
+    color: $blue;
+
+    @include until-tablet {
+      display: block;
+      margin-right: 0;
+    }
+  }
+}
+
+.review__slider-action {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 107px;
+  margin-right: auto;
+
+  @include size-height(17px, 25px);
+  color: rgba($dark, 0.5);
+
+  @include until-tablet {
+    @include center;
+    order: -1;
+    width: 98px;
+    margin-bottom: 23px;
+  }
+}
+
+.review__button-list {
+  @include list;
+  display: flex;
+
+  @include until-tablet {
+    justify-content: space-between;
+    width: 41px;
+  }
+}
+
+.review__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 29px;
+  height: 22px;
+  padding: 0;
+
+  background-color: transparent;
+  border: none;
+
+  cursor: pointer;
+
+  @include until-tablet {
+    width: 14px;
+  }
+
+  &:hover {
+    @include from-desktop {
+      opacity: 0.7;
+    }
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+
+  &--prev {
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  svg {
+    stroke: $dark;
+    opacity: 0.2;
+  }
+}
+
+.review__social {
+  width: 104px;
+
+  @include until-tablet {
+    margin-left: -5px;
+  }
+}
