@@ -3,14 +3,17 @@
 
   p {
     @include reset-m-p;
+    margin-left: 31px;
+
     @include size-height(12px, 1.5);
     text-align: center;
 
     color: rgba($dark, 0.5);
 
     @include until-tablet {
-      margin-top: 24px;
+      margin-top: 20px;
       margin-bottom: 28px;
+      margin-left: 0;
     }
   }
 }
@@ -46,6 +49,7 @@
 
   @include until-tablet {
     width: 136px;
+    margin-right: 8px;
   }
 
   svg {

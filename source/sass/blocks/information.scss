@@ -1,0 +1,217 @@
+.information__container {
+  @include container(110px, 0, 0, 0);
+  padding-top: 67px;
+  padding-bottom: 74px;
+
+  background-image: url("../img/bg-location-desktop@1x.png");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: top -23px center;
+
+  @include from-retina {
+    background-image: url("../img/bg-location-desktop@2x.png");
+  }
+
+  @include until-tablet {
+    padding-top: 55px;
+    padding-bottom: 64px;
+
+    background: none;
+  }
+
+  h2 {
+    @include headers;
+    max-width: 530px;
+    margin-bottom: 48px;
+
+    @include until-tablet {
+      margin-bottom: 24px;
+    }
+  }
+}
+
+.informatiom__location-wrapper {
+  position: relative;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 60px;
+
+  @include until-tablet {
+    display: block;
+    margin-bottom: 16px;
+  }
+}
+
+.informatiom__curator-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  width: 480px;
+
+  @include until-tablet {
+    @include pad-center($screen-padding-mob);
+    width: 100%;
+    display: block;
+    margin-bottom: 40px;
+  }
+
+  img {
+    width: 112px;
+    height: auto;
+    margin-right: 25px;
+
+    @include until-tablet {
+      margin-right: 0;
+      margin-bottom: 11px;
+    }
+  }
+
+  p {
+    @include text-big;
+    width: 100%;
+    margin-top: 28px;
+
+    @include until-tablet {
+      margin-top: 31px;
+    }
+  }
+}
+
+.information__city {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 38px;
+
+  @include size-height(15px, 22px);
+  color: rgba($dark, 0.74);
+
+  svg {
+    margin-right: 5px;
+  }
+
+  a {
+    margin-left: 16px;
+    margin-right: 9px;
+
+    @include size-height(16px, 23px);
+    font-weight: 500;
+    text-decoration: none;
+    color: inherit;
+    text-transform: lowercase;
+    font-variant: small-caps;
+    letter-spacing: 1.7px;
+
+    border-bottom: 1px dashed $blue;
+
+    &:hover {
+      @include from-desktop {
+        opacity: 0.7;
+      }
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
+  }
+}
+
+.information__curator-data {
+  width: 230px;
+  padding-top: 2px;
+
+  color: rgba($dark, 0.74);
+
+  @include until-tablet {
+    width: 100%;
+  }
+
+  address {
+    @include text-small;
+    margin-bottom: 13px;
+
+    font-style: normal;
+  }
+}
+
+.information__curator-name {
+  margin-bottom: 12px;
+
+  @include size-height(15px, 22px);
+
+  span {
+    margin-right: 5px;
+
+    color: $blue;
+  }
+}
+
+.information__social {
+  width: 96px;
+  margin-left: -5px;
+}
+
+.information__map {
+  position: relative;
+  margin-top: -13%;
+  width: 55.8917;
+  height: auto;
+
+  @include until-tablet {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+.informatiom__contact-wrapper {
+  display: flex;
+  padding-right: 9.0765%;
+
+  @include until-tablet {
+    @include pad-center($screen-padding-mob);
+    display: block;
+  }
+}
+
+.informatiom__contact-text {
+  width: 378px;
+  flex-shrink: 0;
+  padding-top: 4px;
+  padding-right: 25px;
+
+  @include until-tablet {
+    width: 100%;
+    padding-right: 0;
+    margin-bottom: 34px;
+  }
+
+  p {
+    @include reset-m-p;
+    margin-bottom: 13px;
+
+    @include size-height(17px, 25px);
+    font-weight: 500;
+
+    @include until-tablet {
+      @include size-height(16px, 24px);
+    }
+  }
+
+  small {
+    @include text-small;
+  }
+}
+
+.information__form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  flex-grow: 1;
+
+  @include until-tablet {
+    @include center;
+    width: 288px;
+  }
+}

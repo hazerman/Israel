@@ -141,3 +141,8 @@
     @include size-height(14px, 22px);
   }
 }
+
+@mixin text-small {
+  @include reset-m-p;
+  @include size-height(13px, 19px);
+}
