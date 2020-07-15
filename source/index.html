@@ -454,7 +454,7 @@
                   <svg width="24" height="24" aria-hidden="true" focusable="false">
                     <use xlink:href="#icon-facebook"></use>
                   </svg>
-                  <span class="visually-hidden">Мы в фэйсбуке</span>
+                  <span class="visually-hidden">Пользователь в фэйсбуке</span>
                 </a>
               </li>
               <li>
@@ -462,7 +462,7 @@
                   <svg width="24" height="24" aria-hidden="true" focusable="false">
                     <use xlink:href="#icon-twitter"></use>
                   </svg>
-                  <span class="visually-hidden">Мы в твиттере</span>
+                  <span class="visually-hidden">Пользователь в твиттере</span>
                 </a>
               </li>
               <li>
@@ -470,14 +470,98 @@
                   <svg width="24" height="24" aria-hidden="true" focusable="false">
                     <use xlink:href="#icon-instagram"></use>
                   </svg>
-                  <span class="visually-hidden">Мы в инстаграме</span>
+                  <span class="visually-hidden">Пользователь в инстаграме</span>
                 </a>
               </li>
             </ul>
           </div>
-
         </div>
+      </div>
+    </section>
 
+    <section class="information">
+      <div class="information__container">
+        <h2>Узнать подробности</h2>
+        <div class="informatiom__location-wrapper">
+          <div class="informatiom__curator-wrapper">
+            <div class="information__city">
+              <svg width="18" height="18" aria-hidden="true" focusable="false">
+                <use xlink:href="#icon-location"></use>
+              </svg>
+              Ваш город:
+              <a href="#">Новосибирск</a>
+              <svg width="16" height="16" aria-hidden="true" focusable="false">
+                <use xlink:href="#icon-gps"></use>
+              </svg>
+            </div>
+            <picture>
+              <source type="image/webp" srcset="img/curator@1x.webp 1x, img/curator@2x.webp 2x">
+              <!-- 1х: 112px; 2x: 224px -->
+              <img src="img/curator@1x.png" width="112" height="112" srcset="img/curator@2x.png 2x"
+                alt="Куратор Анна Горелик">
+            </picture>
+            <div class="information__curator-data">
+              <div class="information__curator-name">
+                <span>Ваш куратор:</span> Анна Горелик
+              </div>
+              <address>Новосибирск, ул. Щетинкина 68, культурный центр «Бейт Менахем»</address>
+              <ul class="social information__social">
+                <li>
+                  <a href="#">
+                    <svg width="24" height="24" aria-hidden="true" focusable="false">
+                      <use xlink:href="#icon-facebook"></use>
+                    </svg>
+                    <span class="visually-hidden">Куратор в фэйсбуке</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <svg width="24" height="24" aria-hidden="true" focusable="false">
+                      <use xlink:href="#icon-whatsapp"></use>
+                    </svg>
+                    <span class="visually-hidden">Куратор в вотсапе</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <svg width="24" height="24" aria-hidden="true" focusable="false">
+                      <use xlink:href="#icon-telegram"></use>
+                    </svg>
+                    <span class="visually-hidden">Куратор в телеграме</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <p>Куратор является опытным специалистом агентства Сохнут и&nbsp;знает о проекте «Маса» всё! Свяжитесь с куратором, узнайте&nbsp;подробнее о программах и выберите свою !</p>
+          </div>
+          <picture>
+            <source type="image/webp" media="(max-width: 767px)" srcset="img/map-mobile@1x.webp 1x, img/map-mobile@2x.webp 2x">
+            <source type="image/webp" srcset="img/map-desktop@1x.webp 1x, img/map-desktop@2x.webp 2x">
+            <source media="(max-width: 767px)" srcset="img/map-mobile@1x.png 1x, img/map-mobile@2x.png 2x">
+            <!-- 1х: 702px; 2x: 1404px -->
+            <img class="information__map" src="img/map-desktop@1x.png" width="702" height="448" srcset="img/map-desktop@2x.png 2x" alt="Новосибирск, ул. Щетинкина 68">
+          </picture>
+        </div>
+        <div class="informatiom__contact-wrapper">
+          <div class="informatiom__contact-text">
+          <p>Оставьте ваши контакты, если у вас
+          остались вопросы — мы на них ответим!</p>
+          <small>Мы не передаём данные третьим лицам. Ваши данные будут в безопасности и вам не придёт спам от нас!</small>
+          </div>
+          <form class="form information__form" action="POST" name="information-form" id="information-form">
+            <ul class="form__list form__list--row">
+              <li class="form__field">
+                <label class="visually-hidden" for="user-name-infromation">Введите ваше имя</label>
+                <input type="text" name="user-name-infromation" id="user-name-infromation" placeholder="Имя" maxlength="20">
+              </li>
+              <li class="form__field">
+                <label class="visually-hidden" for="user-tel-information">Введите ваш телефон</label>
+                <input type="tel" inputmode="tel" name="user-tel-information" id="user-tel-information" placeholder="Телефон">
+              </li>
+            </ul>
+            <button class="button form__button form__button--flow" type="submit">Перезвоните мне</button>
+          </form>
+        </div>
       </div>
     </section>
   </main>
