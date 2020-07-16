@@ -37,6 +37,12 @@ gulp.task("js", function() {
     .pipe(gulp.dest("build/js"));
 });
 
+gulp.task("jsPolyfills", function() {
+  return gulp.src("source/js/polyfills/*.js")
+    .pipe(concat("vendor.js"))
+    .pipe(gulp.dest("build/js"));
+});
+
 gulp.task("images", function() {
   return gulp.src("source/img/**/*.{png,jpg,svg}")
     .pipe(imagemin([
@@ -112,6 +118,7 @@ gulp.task(
     "copy",
     "css",
     "js",
+    "jsPolyfills",
     "webp",
     "sprite",
     "html"
