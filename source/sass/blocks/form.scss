@@ -37,6 +37,8 @@
 }
 
 .form__field {
+  position: relative;
+
   input {
     width: 100%;
     min-height: 59px;
@@ -59,6 +61,14 @@
       background-origin: border-box;
       background-clip: padding-box, border-box;
       background-image: linear-gradient(white, white), $gradient-default;
+    }
+
+    &:invalid {
+      border: 2px solid $invalid-color;
+
+      + .form__invalid-message {
+        display: block;
+      }
     }
 
     &::placeholder {
@@ -85,10 +95,21 @@
   @include size-height(13px, 19px);
   color: rgba($dark, 0.74);
 
-  input:checked {
-    + label {
-      &::before {
-        background-image: $gradient-default;
+  input {
+    &:checked {
+      + label {
+        &::before {
+          background-image: $gradient-default;
+        }
+      }
+    }
+
+    &:focus {
+      + label {
+        &::before {
+          outline: 2px solid $yellow;
+          outline-offset: 3px;
+        }
       }
     }
   }
@@ -148,4 +169,15 @@
       margin-top: 16px;
     }
   }
+}
+
+.form__invalid-message {
+  position: absolute;
+  top: 100%;
+  left: 30px;
+
+  display: none;
+
+  @include size-height(13px, 19px);
+  color: rgba($invalid-color, 0.75);
 }
