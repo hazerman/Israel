@@ -180,4 +180,11 @@
 
   @include size-height(13px, 19px);
   color: rgba($invalid-color, 0.75);
+
+  &--mobile-top {
+    @include until-tablet {
+      top: auto;
+      bottom: 100%;
+    }
+  }
 }

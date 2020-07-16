@@ -48,6 +48,24 @@
   @include until-tablet {
     width: 100%;
   }
+
+  p {
+    display: none;
+  }
+
+  &--no-js {
+    a {
+      @include current;
+    }
+
+    p {
+      display: block;
+    }
+
+    svg {
+      display: none;
+    }
+  }
 }
 
 .questions__item {
@@ -67,6 +85,29 @@
     min-height: 86px;
   }
 
+  a {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+
+    text-decoration: none;
+
+    &:hover {
+      svg {
+        @include from-desktop {
+          opacity: 0.7;
+        }
+      }
+    }
+
+    &:active {
+      svg {
+        opacity: 0.5;
+      }
+    }
+  }
+
   h3 {
     @include text-big;
     width: 71.4286%;
@@ -83,9 +124,21 @@
     }
   }
 
+  svg {
+    margin-right: 39px;
+    margin-top: 4px;
+
+    stroke: $blue;
+
+    transform: rotate(90deg);
+
+    @include until-tablet {
+      margin-right: 2px;
+    }
+  }
+
   p {
     @include text-regular;
-    display: none;
     width: 85.7143%;
     margin-top: 25px;
 
@@ -96,43 +149,6 @@
       width: 92%;
       margin-top: 18px;
     }
-  }
-
-  button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 32px;
-    padding: 0;
-    width: 25px;
-    height: 25px;
-
-    border: none;
-    background: none;
-
-    cursor: pointer;
-    transform: rotate(90deg);
-
-    @include until-tablet {
-      margin-top: 3px;
-      margin-right: 0;
-      width: 18px;
-      height: 23px;
-    }
-
-    &:hover {
-      @include from-desktop {
-        opacity: 0.7;
-      }
-    }
-
-    &:active {
-      opacity: 0.5;
-    }
-  }
-
-  svg {
-    stroke: $blue;
   }
 
   &--show {
@@ -146,7 +162,7 @@
       display: block;
     }
 
-    button {
+    svg {
       transform: rotate(-90deg);
     }
   }

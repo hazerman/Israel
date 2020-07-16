@@ -18,7 +18,7 @@
 
   @include until-tablet {
     padding-top: 35px;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 
     background-image: url("../img/bg-city-1-mobile@1x.png");
     background-size: 320px auto;
@@ -212,6 +212,11 @@
 
 .programms__item {
   display: none;
+  margin-bottom: 40px;
+
+  @include until-tablet {
+    margin-bottom: 10px;
+  }
 
   &--current {
     display: block;

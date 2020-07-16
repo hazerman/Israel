@@ -9,6 +9,8 @@
   var programmItems = programmArea.querySelectorAll('.programms__item');
   var currentIndex = 1;
 
+  programmArea.classList.remove('programms__list--no-js');
+
   var changeTab = function (newIndex) {
     tabButtons[currentIndex].classList.remove('programms__tabs-item' + CURRENT_MOD);
     programmItems[currentIndex].classList.remove('programms__item' + CURRENT_MOD);
