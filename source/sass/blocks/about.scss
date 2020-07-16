@@ -67,6 +67,11 @@
   img {
     width: 100%;
     height: auto;
+
+    @include until-tablet {
+      @include center;
+      max-width: 400px;
+    }
   }
 
   button {

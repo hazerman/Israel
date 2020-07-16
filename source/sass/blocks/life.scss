@@ -68,6 +68,8 @@
   @include until-tablet {
     position: static;
 
+    @include center;
+    max-width: 400px;
     width: 100%;
     margin-bottom: 16px;
 

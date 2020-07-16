@@ -46,7 +46,7 @@
 .review__main-wrapper {
   display: flex;
 
-  @include until-tablet {
+  @include until-desktop {
     flex-direction: column;
   }
 }

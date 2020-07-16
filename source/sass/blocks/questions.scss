@@ -16,6 +16,18 @@
       url("../img/bg-questions-desktop@2x.png");
   }
 
+  @include between-tablet-desktop {
+    background-image: url("../img/bg-bag-desktop@1x.png"),
+      url("../img/bg-questions-desktop@1x.png");
+    background-position: bottom left -42px, top 57px center;
+    background-size: 194px auto, 100% auto;
+
+    @include from-retina {
+      background-image: url("../img/bg-bag-desktop@2x.png"),
+        url("../img/bg-questions-desktop@2x.png");
+    }
+  }
+
   @include until-tablet {
     padding-top: 50px;
     padding-bottom: 20px;
@@ -44,6 +56,10 @@
   counter-reset: questions;
 
   width: 48.8657%;
+
+  @include between-tablet-desktop {
+    width: 100%;
+  }
 
   @include until-tablet {
     width: 100%;

@@ -25,6 +25,10 @@
     background-position: top 136px left -74px, top 92% right 0;
   }
 
+  @include between-tablet-desktop {
+    padding-top: 50px;
+  }
+
   @include until-tablet {
     @include pad-center($screen-padding-mob);
     padding-top: 59px;
@@ -81,6 +85,18 @@
     padding-right: 5%;
     background-size: 337px auto, 38% auto;
     background-position: top 370px right -121px, top 160px left 12px;
+  }
+
+  @include between-tablet-desktop {
+    padding-left: 5%;
+
+    background-image: url("../img/bg-stamp-desktop@1x.png");
+    background-size: 337px auto;
+    background-position: top 370px right -121px;
+
+    @include from-retina {
+      background-image: url("../img/bg-stamp-desktop@2x.png");
+    }
   }
 
   @include until-tablet {
@@ -240,7 +256,7 @@
       @include until-tablet {
         left: 10px;
 
-        height: 160%;
+        height: 136%;
       }
     }
 

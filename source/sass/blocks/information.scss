@@ -12,6 +12,10 @@
     background-image: url("../img/bg-location-desktop@2x.png");
   }
 
+  @include between-tablet-desktop {
+    padding-right: 110px;
+  }
+
   @include until-tablet {
     padding-top: 54px;
     padding-bottom: 64px;
@@ -36,11 +40,11 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 60px;
+  margin-bottom: 64px;
 
-  @include until-tablet {
+  @include until-desktop {
     display: block;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
   }
 }
 
@@ -155,12 +159,19 @@
 
 .information__map {
   position: relative;
+
+  display: block;
   margin-top: -13%;
-  width: 55.8917;
   height: auto;
 
-  @include until-tablet {
+  @include until-desktop {
+    margin-top: 30px;
     width: 100%;
+  }
+
+  @include until-tablet {
+    @include center;
+    max-width: 400px;
     margin-top: 0;
   }
 }
