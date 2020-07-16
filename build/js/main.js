@@ -3,13 +3,15 @@
 (function () {
   var questionsArea = document.querySelector('.questions__list');
 
+  questionsArea.classList.remove('questions__list--no-js');
+
   var toggleText = function (item) {
     item.classList.toggle('questions__item--show');
   };
 
   questionsArea.addEventListener('click', function (evt) {
     evt.preventDefault();
-    var target = evt.target.closest('button');
+    var target = evt.target.closest('a');
     if (target) {
       toggleText(target.closest('.questions__item'));
     }
@@ -20,10 +22,41 @@
 
 (function () {
   var popupForm = document.querySelector('#popup-form');
+  var travelForm = document.querySelector('#travel-form');
+  var informationForm = document.querySelector('#information-form');
 
-  popupForm.addEventListener('submit', function (evt) {
-    evt.preventDefault();
-    window.popup.remove();
+  var getValidityMessage = function (input) {
+    if (input.validity.patternMismatch) {
+      return '+7 (999) 999 99 99';
+    }
+    return '';
+  };
+
+  [popupForm, travelForm, informationForm].forEach(function (form) {
+    var inputTel = form.querySelector('input[type=tel]');
+    inputTel.value = localStorage.getItem('tel');
+    var inputName = null;
+    if (form.querySelector('input[type=text]')) {
+      inputName = form.querySelector('input[type=text]');
+      inputName.value = localStorage.getItem('name');
+    }
+    inputTel.removeAttribute('required');
+    inputTel.addEventListener('input', function () {
+      inputTel.setCustomValidity(getValidityMessage(inputTel));
+    });
+
+    form.addEventListener('submit', function (evt) {
+      evt.preventDefault();
+      if (form.id === 'popup-form') {
+        window.popup.removeSpecial();
+      } else {
+        window.popup.showAccepted();
+      }
+      localStorage.setItem('tel', inputTel.value);
+      if (inputName) {
+        localStorage.setItem('name', inputName.value);
+      }
+    });
   });
 })();
 
@@ -44,12 +77,8 @@
     closeButton.removeEventListener('click', onCloseButtonClick);
     document.removeEventListener('keydown', onEscPress);
     closeButton = null;
-    if (currentPopup === popupRequest) {
-      currentPopup = null;
-      showPopup(popupAccept);
-    } else {
-      currentPopup = null;
-    }
+    currentPopup = null;
+    document.body.removeAttribute('style');
   };
 
   var onCloseButtonClick = function () {
@@ -62,14 +91,26 @@
     acceptButton = null;
   };
 
+  var onPopupClick = function (evt) {
+    var target = evt.target.closest('.popup__field');
+    if (!target) {
+      removePopup();
+    }
+  };
+
   var onEscPress = function (evt) {
     window.util.escEvent(evt, removePopup);
   };
 
   var showPopup = function (popup) {
+    document.body.style.overflow = 'hidden';
     currentPopup = popup;
     currentPopup.classList.add(SHOWN_POPUP);
+    if (currentPopup.querySelector('input')) {
+      currentPopup.querySelector('input').focus();
+    }
     closeButton = currentPopup.querySelector('.popup__close-btn');
+    popup.addEventListener('click', onPopupClick);
     closeButton.addEventListener('click', onCloseButtonClick);
     if (currentPopup.querySelector('.popup__button')) {
       acceptButton = currentPopup.querySelector('.popup__button');
@@ -78,13 +119,23 @@
     document.addEventListener('keydown', onEscPress);
   };
 
+  var removeSpecial = function () {
+    removePopup();
+    showPopup(popupAccept);
+  };
+
+  var showAccepted = function () {
+    showPopup(popupAccept);
+  };
+
   callButton.addEventListener('click', function (evt) {
     evt.preventDefault();
     showPopup(popupRequest);
   });
 
   window.popup = {
-    remove: removePopup
+    showAccepted: showAccepted,
+    removeSpecial: removeSpecial
   };
 })();
 
@@ -186,6 +237,8 @@
   var programmArea = document.querySelector('.programms__list');
   var programmItems = programmArea.querySelectorAll('.programms__item');
   var currentIndex = 1;
+
+  programmArea.classList.remove('programms__list--no-js');
 
   var changeTab = function (newIndex) {
     tabButtons[currentIndex].classList.remove('programms__tabs-item' + CURRENT_MOD);
