@@ -131,10 +131,11 @@
           <div class="travel__desire">
             <h2>Хочу поехать!</h2>
             <p>Оставьте свой телефон и мы свяжемся с вами, подберём куратора и ответим на все вопросы!</p>
-            <form class="form travel__form" action="POST" name="form-travel" id="form-travel">
+            <form class="form travel__form" action="POST" name="travel-form" id="travel-form">
               <div class="form__field">
                 <label class="visually-hidden" for="user-tel-travel">Введите ваш телефон</label>
-                <input type="tel" inputmode="tel" name="user-tel-travel" id="user-tel-travel" placeholder="Телефон">
+                <input type="tel" inputmode="tel" name="user-tel-travel" id="user-tel-travel" placeholder="Телефон" pattern="\+7\s[\(]9\d{2}[\)]\s\d{3}\s\d{2}\s\d{2}" required>
+                <span class="form__invalid-message">Ошибка: неверный формат</span>
               </div>
               <button class="button form__button form__button--overlay" type="submit">Перезвоните мне</button>
             </form>
@@ -556,7 +557,8 @@
               </li>
               <li class="form__field">
                 <label class="visually-hidden" for="user-tel-information">Введите ваш телефон</label>
-                <input type="tel" inputmode="tel" name="user-tel-information" id="user-tel-information" placeholder="Телефон">
+                <input type="tel" inputmode="tel" name="user-tel-information" id="user-tel-information" placeholder="Телефон" pattern="\+7\s[\(]9\d{2}[\)]\s\d{3}\s\d{2}\s\d{2}" required>
+                <span class="form__invalid-message">Ошибка: неверный формат</span>
               </li>
             </ul>
             <button class="button form__button form__button--flow" type="submit">Перезвоните мне</button>
@@ -621,7 +623,8 @@
           </li>
           <li class="form__field">
             <label class="visually-hidden" for="user-tel-pop">Введите ваш телефон</label>
-            <input type="tel" inputmode="tel" name="user-tel-pop" id="user-tel-pop" placeholder="Телефон">
+            <input type="tel" inputmode="tel" name="user-tel-pop" id="user-tel-pop" placeholder="Телефон" pattern="\+7\s[\(]9\d{2}[\)]\s\d{3}\s\d{2}\s\d{2}" required>
+            <span class="form__invalid-message">Ошибка: неверный формат</span>
           </li>
         </ul>
         <div class="form__action-wrapper">
