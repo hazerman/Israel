@@ -37,9 +37,14 @@ gulp.task("js", function() {
     .pipe(gulp.dest("build/js"));
 });
 
-gulp.task("jsPolyfills", function() {
-  return gulp.src("source/js/polyfills/*.js")
+gulp.task("jsVendor", function() {
+  return gulp.src("source/js/vendor/*.js")
     .pipe(concat("vendor.js"))
+    .pipe(gulp.dest("build/js"));
+});
+
+gulp.task("jsSeparate", function() {
+  return gulp.src("source/js/separate/*.js")
     .pipe(gulp.dest("build/js"));
 });
 
@@ -118,7 +123,8 @@ gulp.task(
     "copy",
     "css",
     "js",
-    "jsPolyfills",
+    "jsVendor",
+    "jsSeparate",
     "webp",
     "sprite",
     "html"
