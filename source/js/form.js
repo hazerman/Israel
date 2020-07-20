@@ -27,14 +27,18 @@
 
     form.addEventListener('submit', function (evt) {
       evt.preventDefault();
-      if (form.id === 'popup-form') {
-        window.popup.removeSpecial();
+      if (inputTel.value) {
+        if (form.id === 'popup-form') {
+          window.popup.removeSpecial();
+        } else {
+          window.popup.showAccepted();
+        }
+        localStorage.setItem('tel', inputTel.value);
+        if (inputName) {
+          localStorage.setItem('name', inputName.value);
+        }
       } else {
-        window.popup.showAccepted();
-      }
-      localStorage.setItem('tel', inputTel.value);
-      if (inputName) {
-        localStorage.setItem('name', inputName.value);
+        inputTel.setAttribute('required', '');
       }
     });
   });
