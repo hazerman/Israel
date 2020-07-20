@@ -4,6 +4,9 @@
   var popupForm = document.querySelector('#popup-form');
   var travelForm = document.querySelector('#travel-form');
   var informationForm = document.querySelector('#information-form');
+  var maskOptions = {
+    mask: '+{7} (000) 000 00 00'
+  };
 
   var getValidityMessage = function (input) {
     if (input.validity.patternMismatch) {
@@ -14,6 +17,8 @@
 
   [popupForm, travelForm, informationForm].forEach(function (form) {
     var inputTel = form.querySelector('input[type=tel]');
+    var mask = window.iMask(inputTel, maskOptions);
+    mask.updateValue();
     inputTel.value = localStorage.getItem('tel');
     var inputName = null;
     if (form.querySelector('input[type=text]')) {
