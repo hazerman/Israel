@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Masa</title>
-  <script src="js/vendor.js" async></script>
+  <script src="js/picturefill.js" async></script>
   <link rel="stylesheet" href="css/style.min.css">
   <link rel="preload" href="fonts/fira-sans-500.woff2" as="font" crossorigin="anonymous">
   <link rel="preload" href="fonts/fira-sans-700.woff2" as="font" crossorigin="anonymous">
@@ -143,7 +143,7 @@
             <form class="form travel__form" action="POST" name="travel-form" id="travel-form">
               <div class="form__field">
                 <label class="visually-hidden" for="user-tel-travel">Введите ваш телефон</label>
-                <input type="tel" inputmode="tel" name="user-tel-travel" id="user-tel-travel" placeholder="Телефон" pattern="\+7\s[\(]9\d{2}[\)]\s\d{3}\s\d{2}\s\d{2}" required>
+                <input type="tel" inputmode="tel" name="user-tel-travel" id="user-tel-travel" placeholder="Телефон" pattern="\+7\s[\(]\d{3}[\)]\s\d{3}\s\d{2}\s\d{2}" required>
                 <span class="form__invalid-message form__invalid-message--mobile-top">Ошибка: неверный формат</span>
               </div>
               <button class="button form__button form__button--overlay" type="submit">Перезвоните мне</button>
@@ -588,7 +588,7 @@
               </li>
               <li class="form__field">
                 <label class="visually-hidden" for="user-tel-information">Введите ваш телефон</label>
-                <input type="tel" inputmode="tel" name="user-tel-information" id="user-tel-information" placeholder="Телефон" pattern="\+7\s[\(]9\d{2}[\)]\s\d{3}\s\d{2}\s\d{2}" required>
+                <input type="tel" inputmode="tel" name="user-tel-information" id="user-tel-information" placeholder="Телефон" pattern="\+7\s[\(]\d{3}[\)]\s\d{3}\s\d{2}\s\d{2}" required>
                 <span class="form__invalid-message">Ошибка: неверный формат</span>
               </li>
             </ul>
@@ -657,7 +657,7 @@
           </li>
           <li class="form__field">
             <label class="visually-hidden" for="user-tel-pop">Введите ваш телефон</label>
-            <input type="tel" inputmode="tel" name="user-tel-pop" id="user-tel-pop" placeholder="Телефон" pattern="\+7\s[\(]9\d{2}[\)]\s\d{3}\s\d{2}\s\d{2}" required>
+            <input type="tel" inputmode="tel" name="user-tel-pop" id="user-tel-pop" placeholder="Телефон" pattern="\+7\s[\(]\d{3}[\)]\s\d{3}\s\d{2}\s\d{2}" required>
             <span class="form__invalid-message">Ошибка: неверный формат</span>
           </li>
         </ul>
@@ -689,6 +689,7 @@
     </div>
   </div>
 
+  <script src="js/vendor.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
