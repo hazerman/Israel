@@ -24,6 +24,9 @@
   var popupForm = document.querySelector('#popup-form');
   var travelForm = document.querySelector('#travel-form');
   var informationForm = document.querySelector('#information-form');
+  var maskOptions = {
+    mask: '+{7} (000) 000 00 00'
+  };
 
   var getValidityMessage = function (input) {
     if (input.validity.patternMismatch) {
@@ -34,6 +37,8 @@
 
   [popupForm, travelForm, informationForm].forEach(function (form) {
     var inputTel = form.querySelector('input[type=tel]');
+    var mask = window.iMask(inputTel, maskOptions);
+    mask.updateValue();
     inputTel.value = localStorage.getItem('tel');
     var inputName = null;
     if (form.querySelector('input[type=text]')) {
@@ -47,14 +52,18 @@
 
     form.addEventListener('submit', function (evt) {
       evt.preventDefault();
-      if (form.id === 'popup-form') {
-        window.popup.removeSpecial();
+      if (inputTel.value) {
+        if (form.id === 'popup-form') {
+          window.popup.removeSpecial();
+        } else {
+          window.popup.showAccepted();
+        }
+        localStorage.setItem('tel', inputTel.value);
+        if (inputName) {
+          localStorage.setItem('name', inputName.value);
+        }
       } else {
-        window.popup.showAccepted();
-      }
-      localStorage.setItem('tel', inputTel.value);
-      if (inputName) {
-        localStorage.setItem('name', inputName.value);
+        inputTel.setAttribute('required', '');
       }
     });
   });

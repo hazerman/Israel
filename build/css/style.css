@@ -472,7 +472,7 @@ img {
   .form__field input {
     width: 100%;
     min-height: 59px;
-    padding: 17px 40px;
+    padding: 17px 38px;
     font-size: 18px;
     line-height: 21px;
     font-weight: 500;
@@ -1702,7 +1702,7 @@ img {
   padding-bottom: 127px;
   background-image: url("../img/bg-bag-desktop@1x.png"), url("../img/bg-people-2-desktop@1x.png"), url("../img/bg-questions-desktop@1x.png");
   background-repeat: no-repeat;
-  background-position: bottom left -42px, top 136px right, top 57px center;
+  background-position: top 863px left -41px, top 136px right, top 57px center;
   background-size: 194px auto, 47.21% auto, 100% auto; }
   @media (max-width: 1365px) {
     .questions__container {
@@ -1718,7 +1718,7 @@ img {
   @media (max-width: 1023px) and (min-width: 768px) {
     .questions__container {
       background-image: url("../img/bg-bag-desktop@1x.png"), url("../img/bg-questions-desktop@1x.png");
-      background-position: bottom left -42px, top 57px center;
+      background-position: top 863px left -42px, top 57px center;
       background-size: 194px auto, 100% auto; } }
   @media (max-width: 1023px) and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 1023px) and (min-width: 768px) and (min-resolution: 1.5dppx) {
     .questions__container {
@@ -1728,7 +1728,7 @@ img {
       padding-top: 50px;
       padding-bottom: 20px;
       background-image: url("../img/bg-bag-desktop@1x.png");
-      background-position: bottom 84px left -48px;
+      background-position: top 710px left -48px;
       background-size: 194px auto; } }
   @media (max-width: 767px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 767px) and (min-resolution: 1.5dppx) {
     .questions__container {
