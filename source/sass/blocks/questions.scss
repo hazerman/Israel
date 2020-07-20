@@ -7,7 +7,7 @@
     url("../img/bg-people-2-desktop@1x.png"),
     url("../img/bg-questions-desktop@1x.png");
   background-repeat: no-repeat;
-  background-position: bottom left -42px, top 136px right, top 57px center;
+  background-position: top 863px left -41px, top 136px right, top 57px center;
   background-size: 194px auto, 47.21% auto, 100% auto;
 
   @include from-retina {
@@ -19,7 +19,7 @@
   @include between-tablet-desktop {
     background-image: url("../img/bg-bag-desktop@1x.png"),
       url("../img/bg-questions-desktop@1x.png");
-    background-position: bottom left -42px, top 57px center;
+    background-position: top 863px left -42px, top 57px center;
     background-size: 194px auto, 100% auto;
 
     @include from-retina {
@@ -33,7 +33,7 @@
     padding-bottom: 20px;
 
     background-image: url("../img/bg-bag-desktop@1x.png");
-    background-position: bottom 84px left -48px;
+    background-position: top 710px left -48px;
     background-size: 194px auto;
 
     @include from-retina {
