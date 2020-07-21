@@ -89,12 +89,14 @@
   flex-wrap: wrap;
   align-items: flex-start;
   padding-top: 40px;
+  padding-bottom: 10px;
 
   color: rgba($dark, 0.74);
 
   @include until-tablet {
     flex-direction: column;
     padding-top: 0;
+    padding-bottom: 0;
   }
 }
 
@@ -106,7 +108,7 @@
 
 .review__comment-item {
   display: none;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 
   @include until-tablet {
     margin-bottom: 21px;
@@ -179,6 +181,7 @@
 }
 
 .review__slider-action {
+  align-self: flex-end;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -246,9 +249,11 @@
 }
 
 .review__social {
+  align-self: flex-end;
   width: 104px;
 
   @include until-tablet {
+    align-self: auto;
     margin-left: -5px;
   }
 }
