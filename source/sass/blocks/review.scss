@@ -20,8 +20,8 @@
 
     background-image: url("../../img/bg-city-2-mobile@1x.png"),
       url("../../img/bg-reviews-mobile@1x.png");
-    background-size: 439px auto, auto 468px;
-    background-position: top 585px right -151px, bottom 60px right -59px;
+    background-size: 439px auto, auto 234px;
+    background-position: top 585px right -151px, top 700px right -59px;
 
     @include from-retina {
       background-image: url("../../img/bg-city-2-mobile@2x.png"),
