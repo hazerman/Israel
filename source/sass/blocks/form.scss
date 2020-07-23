@@ -54,6 +54,12 @@
     border: 2px solid #e3e3e3;
     border-radius: 80px;
 
+    &:hover {
+      @include from-desktop {
+        border-color: rgba(#e3e3e3, 0.7);
+      }
+    }
+
     &:focus {
       outline: none;
 
@@ -101,6 +107,26 @@
         &::before {
           background-image: $gradient-default;
         }
+      }
+    }
+
+    &:hover {
+      + label {
+        @include from-desktop {
+          color: rgba($dark, 0.6);
+        }
+
+        &::before {
+          @include from-desktop {
+            opacity: 0.7;
+          }
+        }
+      }
+    }
+
+    &:active {
+      + label {
+        color: rgba($dark, 0.5);
       }
     }
 
