@@ -2,6 +2,7 @@
   @include container(110px, 110px);
   padding-top: 136px;
   padding-bottom: 127px;
+  min-height: 1040px;
 
   background-image: url("../img/bg-bag-desktop@1x.png"),
     url("../img/bg-people-2-desktop@1x.png"),
@@ -16,10 +17,14 @@
       url("../img/bg-questions-desktop@2x.png");
   }
 
+  @include until-full {
+    background-position: top 61vw left -42px, top 136px right, top 57px center;
+  }
+
   @include between-tablet-desktop {
     background-image: url("../img/bg-bag-desktop@1x.png"),
       url("../img/bg-questions-desktop@1x.png");
-    background-position: top 863px left -42px, top 57px center;
+    background-position: top 61vw left -42px, top 57px center;
     background-size: 194px auto, 100% auto;
 
     @include from-retina {
@@ -30,10 +35,11 @@
 
   @include until-tablet {
     padding-top: 50px;
-    padding-bottom: 20px;
+    padding-bottom: 60px;
+    min-height: auto;
 
     background-image: url("../img/bg-bag-desktop@1x.png");
-    background-position: top 710px left -48px;
+    background-position: top calc(940px - 72vw) left -48px;
     background-size: 194px auto;
 
     @include from-retina {
@@ -63,6 +69,7 @@
 
   @include until-tablet {
     width: 100%;
+    min-height: calc(954px - 56vw);
   }
 
   p {
