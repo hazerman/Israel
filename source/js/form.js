@@ -15,6 +15,12 @@
     return '';
   };
 
+  var checkInputValue = function (input) {
+    if (!input.value) {
+      input.setAttribute('required', '');
+    }
+  };
+
   [popupForm, travelForm, informationForm].forEach(function (form) {
     if (form) {
       var inputTel = form.querySelector('input[type=tel]');
@@ -24,6 +30,7 @@
       var inputName = null;
       if (form.querySelector('input[type=text]')) {
         inputName = form.querySelector('input[type=text]');
+        inputName.removeAttribute('required');
         inputName.value = localStorage.getItem('name');
       }
       inputTel.removeAttribute('required');
@@ -33,18 +40,21 @@
 
       form.addEventListener('submit', function (evt) {
         evt.preventDefault();
-        if (inputTel.value) {
+        if (!inputName) {
+          checkInputValue(inputTel);
+          return;
+        }
+        if (!inputTel.value || !inputName.value) {
+          checkInputValue(inputTel);
+          checkInputValue(inputName);
+        } else {
           if (form.id === 'popup-form') {
             window.popup.removeSpecial();
           } else {
             window.popup.showAccepted();
           }
+          localStorage.setItem('name', inputName.value);
           localStorage.setItem('tel', inputTel.value);
-          if (inputName) {
-            localStorage.setItem('name', inputName.value);
-          }
-        } else {
-          inputTel.setAttribute('required', '');
         }
       });
     }
