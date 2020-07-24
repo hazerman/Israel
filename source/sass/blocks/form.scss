@@ -27,10 +27,11 @@
     li {
       width: 250px;
       margin-right: 24px;
-      margin-bottom: 8px;
+      margin-bottom: 18px;
 
       @include until-tablet {
         width: 100%;
+        margin-bottom: 8px;
       }
     }
   }
