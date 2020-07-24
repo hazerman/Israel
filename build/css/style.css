@@ -462,10 +462,11 @@ img {
     .form__list--row li {
       width: 250px;
       margin-right: 24px;
-      margin-bottom: 8px; }
+      margin-bottom: 18px; }
       @media (max-width: 767px) {
         .form__list--row li {
-          width: 100%; } }
+          width: 100%;
+          margin-bottom: 8px; } }
 
 .form__field {
   position: relative; }
@@ -482,6 +483,9 @@ img {
     letter-spacing: 1.4px;
     border: 2px solid #e3e3e3;
     border-radius: 80px; }
+    @media (min-width: 1024px) {
+      .form__field input:hover {
+        border-color: rgba(227, 227, 227, 0.7); } }
     .form__field input:focus {
       outline: none;
       border-color: transparent;
@@ -528,6 +532,14 @@ img {
   color: rgba(72, 72, 72, 0.74); }
   .form__nda-field input:checked + label::before {
     background-image: linear-gradient(142.39deg, #ffc341 20.46%, #ffd701 65.31%); }
+  @media (min-width: 1024px) {
+    .form__nda-field input:hover + label {
+      color: rgba(72, 72, 72, 0.6); } }
+  @media (min-width: 1024px) {
+    .form__nda-field input:hover + label::before {
+      opacity: 0.7; } }
+  .form__nda-field input:active + label {
+    color: rgba(72, 72, 72, 0.5); }
   .form__nda-field input:focus + label::before {
     outline: 2px solid #ffc341;
     outline-offset: 3px; }
@@ -1700,6 +1712,7 @@ img {
   width: 1366px;
   padding-top: 136px;
   padding-bottom: 127px;
+  min-height: 1040px;
   background-image: url("../img/bg-bag-desktop@1x.png"), url("../img/bg-people-2-desktop@1x.png"), url("../img/bg-questions-desktop@1x.png");
   background-repeat: no-repeat;
   background-position: top 863px left -41px, top 136px right, top 57px center;
@@ -1715,10 +1728,13 @@ img {
   @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx) {
     .questions__container {
       background-image: url("../img/bg-bag-desktop@2x.png"), url("../img/bg-people-2-desktop@2x.png"), url("../img/bg-questions-desktop@2x.png"); } }
+  @media (max-width: 1365px) {
+    .questions__container {
+      background-position: top 61vw left -42px, top 136px right, top 57px center; } }
   @media (max-width: 1023px) and (min-width: 768px) {
     .questions__container {
       background-image: url("../img/bg-bag-desktop@1x.png"), url("../img/bg-questions-desktop@1x.png");
-      background-position: top 863px left -42px, top 57px center;
+      background-position: top 61vw left -42px, top 57px center;
       background-size: 194px auto, 100% auto; } }
   @media (max-width: 1023px) and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 1023px) and (min-width: 768px) and (min-resolution: 1.5dppx) {
     .questions__container {
@@ -1726,9 +1742,10 @@ img {
   @media (max-width: 767px) {
     .questions__container {
       padding-top: 50px;
-      padding-bottom: 20px;
+      padding-bottom: 60px;
+      min-height: auto;
       background-image: url("../img/bg-bag-desktop@1x.png");
-      background-position: top 710px left -48px;
+      background-position: top calc(940px - 72vw) left -48px;
       background-size: 194px auto; } }
   @media (max-width: 767px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 767px) and (min-resolution: 1.5dppx) {
     .questions__container {
@@ -1764,7 +1781,8 @@ img {
       width: 100%; } }
   @media (max-width: 767px) {
     .questions__list {
-      width: 100%; } }
+      width: 100%;
+      min-height: calc(954px - 56vw); } }
   .questions__list p {
     display: none; }
   .questions__list--no-js a {
@@ -1805,11 +1823,6 @@ img {
             align-items: flex-start;
     width: 100%;
     text-decoration: none; }
-    @media (min-width: 1024px) {
-      .questions__item a:hover svg {
-        opacity: 0.7; } }
-    .questions__item a:active svg {
-      opacity: 0.5; }
   .questions__item h3 {
     margin: 0;
     padding: 0;
@@ -1876,6 +1889,13 @@ img {
     font-weight: 700;
     color: #ffc341; }
 
+@media (min-width: 1024px) {
+  .questions__button-collapse:hover svg {
+    opacity: 0.7; } }
+
+.questions__button-collapse:active svg {
+  opacity: 0.5; }
+
 .review__container {
   padding-left: 98px;
   padding-right: 184px;
@@ -1901,7 +1921,7 @@ img {
       background-image: url("../../img/bg-city-2-desktop@2x.png"), url("../../img/bg-reviews-desktop@2x.png"); } }
   @media (max-width: 767px) {
     .review__container {
-      padding-top: 59px;
+      padding-top: 19px;
       padding-bottom: 20px;
       background-image: url("../../img/bg-city-2-mobile@1x.png"), url("../../img/bg-reviews-mobile@1x.png");
       background-size: 439px auto, auto 234px;
@@ -2492,7 +2512,7 @@ img {
       width: 100%;
       min-height: auto;
       height: 100%;
-      padding: 20% 16px 30px;
+      padding: 20% 5% 30px;
       text-align: center;
       border-radius: 0;
       -webkit-box-shadow: none;
