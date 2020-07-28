@@ -76,18 +76,16 @@
     display: none;
   }
 
-  &--no-js {
-    a {
-      @include current;
-    }
+  &--no-js a {
+    @include current;
+  }
 
-    p {
-      display: block;
-    }
+  &--no-js p {
+    display: block;
+  }
 
-    svg {
-      display: none;
-    }
+  &--no-js svg {
+    display: none;
   }
 }
 
@@ -166,14 +164,14 @@
     @include until-tablet {
       padding-bottom: 15px;
     }
+  }
 
-    p {
-      display: block;
-    }
+  &--show p {
+    display: block;
+  }
 
-    svg {
-      transform: rotate(-90deg);
-    }
+  &--show svg {
+    transform: rotate(-90deg);
   }
 
   &::before {
@@ -190,17 +188,13 @@
 }
 
 .questions__button-collapse {
-  &:hover {
-    svg {
-      @include from-desktop {
-        opacity: 0.7;
-      }
+  &:hover svg {
+    @include from-desktop {
+      opacity: 0.7;
     }
   }
 
-  &:active {
-    svg {
-      opacity: 0.5;
-    }
+  &:active svg {
+    opacity: 0.5;
   }
 }

@@ -7,12 +7,10 @@
 
   &--column {
     margin-bottom: 24px;
+  }
 
-    li {
-      + li {
-        margin-top: 8px;
-      }
-    }
+  &--column li + li {
+    margin-top: 8px;
   }
 
   &--row {
@@ -23,16 +21,16 @@
       display: block;
       width: 100%;
     }
+  }
 
-    li {
-      width: 250px;
-      margin-right: 24px;
-      margin-bottom: 18px;
+  &--row li {
+    width: 250px;
+    margin-right: 24px;
+    margin-bottom: 18px;
 
-      @include until-tablet {
-        width: 100%;
-        margin-bottom: 8px;
-      }
+    @include until-tablet {
+      width: 100%;
+      margin-bottom: 8px;
     }
   }
 }
@@ -72,10 +70,10 @@
 
     &:invalid {
       border: 2px solid $invalid-color;
+    }
 
-      + .form__invalid-message {
-        display: block;
-      }
+    &:invalid + .form__invalid-message {
+      display: block;
     }
 
     &::placeholder {
@@ -102,44 +100,31 @@
   @include size-height(13px, 19px);
   color: rgba($dark, 0.74);
 
-  input {
-    &:checked {
-      + label {
-        &::before {
-          background-image: $gradient-default;
-        }
-      }
-    }
+  input:checked + label::before {
+    background-image: $gradient-default;
+  }
 
-    &:hover {
-      + label {
-        @include from-desktop {
-          color: rgba($dark, 0.6);
-        }
-
-        &::before {
-          @include from-desktop {
-            opacity: 0.7;
-          }
-        }
-      }
-    }
-
-    &:active {
-      + label {
-        color: rgba($dark, 0.5);
-      }
-    }
-
-    &:focus {
-      + label {
-        &::before {
-          outline: 2px solid $yellow;
-          outline-offset: 3px;
-        }
-      }
+  input:hover + label {
+    @include from-desktop {
+      color: rgba($dark, 0.6);
     }
   }
+
+  input:hover + label::before {
+    @include from-desktop {
+      opacity: 0.7;
+    }
+  }
+
+  input:active + label {
+    color: rgba($dark, 0.5);
+  }
+
+  input:focus + label::before {
+    outline: 2px solid $yellow;
+    outline-offset: 3px;
+  }
+
 
   label {
     position: relative;

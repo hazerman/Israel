@@ -236,10 +236,8 @@
     opacity: 0.5;
   }
 
-  &--prev {
-    svg {
-      transform: rotate(180deg);
-    }
+  &--prev svg {
+    transform: rotate(180deg);
   }
 
   svg {

@@ -25,12 +25,12 @@
     align-items: center;
     padding-top: 18px;
     padding-bottom: 17px;
+  }
 
-    svg {
-      margin-right: 8px;
+  &--icon svg {
+    margin-right: 8px;
 
-      fill: $white;
-    }
+    fill: $white;
   }
 
   &:hover {
