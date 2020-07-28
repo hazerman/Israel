@@ -406,9 +406,9 @@ img {
             align-items: center;
     padding-top: 18px;
     padding-bottom: 17px; }
-    .button--icon svg {
-      margin-right: 8px;
-      fill: #ffffff; }
+  .button--icon svg {
+    margin-right: 8px;
+    fill: #ffffff; }
   @media (min-width: 1024px) {
     .button:hover {
       background-image: linear-gradient(143.55deg, #ffc341 -50.3%, #ffd701 63.1%); } }
@@ -447,8 +447,8 @@ img {
   list-style: none; }
   .form__list--column {
     margin-bottom: 24px; }
-    .form__list--column li + li {
-      margin-top: 8px; }
+  .form__list--column li + li {
+    margin-top: 8px; }
   .form__list--row {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -459,14 +459,14 @@ img {
       .form__list--row {
         display: block;
         width: 100%; } }
-    .form__list--row li {
-      width: 250px;
-      margin-right: 24px;
-      margin-bottom: 18px; }
-      @media (max-width: 767px) {
-        .form__list--row li {
-          width: 100%;
-          margin-bottom: 8px; } }
+  .form__list--row li {
+    width: 250px;
+    margin-right: 24px;
+    margin-bottom: 18px; }
+    @media (max-width: 767px) {
+      .form__list--row li {
+        width: 100%;
+        margin-bottom: 8px; } }
 
 .form__field {
   position: relative; }
@@ -494,8 +494,8 @@ img {
       background-image: linear-gradient(white, white), linear-gradient(142.39deg, #ffc341 20.46%, #ffd701 65.31%); }
     .form__field input:invalid {
       border: 2px solid #ff0000; }
-      .form__field input:invalid + .form__invalid-message {
-        display: block; }
+    .form__field input:invalid + .form__invalid-message {
+      display: block; }
     .form__field input::-webkit-input-placeholder {
       color: rgba(72, 72, 72, 0.5); }
     .form__field input::-moz-placeholder {
@@ -1015,19 +1015,19 @@ img {
       bottom: 0;
       border-bottom-width: 0;
       border-top-width: 34px; }
-    .programms__tabs-item--current .programms__tabs-link {
-      cursor: default;
-      pointer-events: none;
-      font-size: 17px;
-      line-height: 19px;
-      font-weight: 500;
-      text-transform: lowercase;
-      font-variant: small-caps;
-      color: #ffffff;
-      letter-spacing: 1.7px;
-      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.12); }
-      .programms__tabs-item--current .programms__tabs-link::before {
-        background-position-y: -132px; }
+  .programms__tabs-item--current .programms__tabs-link {
+    cursor: default;
+    pointer-events: none;
+    font-size: 17px;
+    line-height: 19px;
+    font-weight: 500;
+    text-transform: lowercase;
+    font-variant: small-caps;
+    color: #ffffff;
+    letter-spacing: 1.7px;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.12); }
+    .programms__tabs-item--current .programms__tabs-link::before {
+      background-position-y: -132px; }
 
 .programms__tabs-link {
   position: relative;
@@ -1116,8 +1116,8 @@ img {
       .programms__item p {
         font-size: 14px;
         line-height: 22px; } }
-    .programms__item p + p {
-      margin-top: 15px; }
+  .programms__item p + p {
+    margin-top: 15px; }
 
 .bg-wrapper__container {
   padding-left: 0;
@@ -1527,9 +1527,9 @@ img {
   .life__layout--small-1-3 {
     width: 32.2138%;
     padding-bottom: 48.5497%; }
-    .life__layout--small-1-3 span {
-      padding-left: 11.1%;
-      padding-right: 6%; }
+  .life__layout--small-1-3 span {
+    padding-left: 11.1%;
+    padding-right: 6%; }
   .life__layout--small-2-3 {
     width: 63.207%;
     padding-bottom: 48.5497%; }
@@ -1873,11 +1873,11 @@ img {
     @media (max-width: 767px) {
       .questions__item--show {
         padding-bottom: 15px; } }
-    .questions__item--show p {
-      display: block; }
-    .questions__item--show svg {
-      -webkit-transform: rotate(-90deg);
-              transform: rotate(-90deg); }
+  .questions__item--show p {
+    display: block; }
+  .questions__item--show svg {
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg); }
   .questions__item::before {
     content: counter(questions);
     position: absolute;
@@ -2521,9 +2521,9 @@ img {
               transform: none; } }
   .popup__field--center {
     text-align: center; }
-    .popup__field--center svg {
-      margin-top: 64px;
-      margin-bottom: 32px; }
+  .popup__field--center svg {
+    margin-top: 64px;
+    margin-bottom: 32px; }
   .popup__field h2 {
     margin: 0;
     padding: 0;
