@@ -32,30 +32,6 @@
     }
   }
 
-  &::after {
-    @include pseudo(absolute);
-    bottom: 7.6%;
-    left: 50%;
-
-    width: 76px;
-    height: 162px;
-
-    background-image: url("../img/bg-scroll@1x.png");
-    background-repeat: no-repeat;
-    background-position: top center;
-    background-size: 100%;
-
-    transform: translateX(-50%);
-
-    @include from-retina {
-      background-image: url("../img/bg-scroll@2x.png");
-    }
-
-    @include until-tablet {
-      bottom: 6.7%;
-    }
-  }
-
   p {
     @include reset-m-p;
     @include center;
@@ -157,6 +133,32 @@
 
     font-size: 14px;
     letter-spacing: 1.7px;
+  }
+
+  &:hover {
+    @include from-desktop {
+      opacity: 0.7;
+    }
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+
+.header__button-scroll {
+  position: absolute;
+  bottom: 11.1%;
+  left: 50%;
+
+  width: 76px;
+  height: 132px;
+
+  transform: translateX(-50%);
+
+  @include until-tablet {
+    bottom: 11.7%;
   }
 
   &:hover {
