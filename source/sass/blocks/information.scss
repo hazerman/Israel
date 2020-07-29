@@ -13,7 +13,7 @@
   }
 
   @include between-tablet-desktop {
-    padding-right: 110px;
+    @include pad-center(5%);
   }
 
   @include until-tablet {
@@ -179,6 +179,10 @@
 .information__contact-wrapper {
   display: flex;
   padding-right: 9.0765%;
+
+  @include until-full {
+    padding-right: 20px;
+  }
 
   @include until-tablet {
     @include pad-center($screen-padding-mob);

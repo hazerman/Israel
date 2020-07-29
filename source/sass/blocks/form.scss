@@ -16,10 +16,17 @@
   &--row {
     display: flex;
     flex-wrap: wrap;
+    flex-grow: 1;
+    justify-content: center;
+
+    @include until-full {
+      margin-left: 24px;
+    }
 
     @include until-tablet {
       display: block;
       width: 100%;
+      margin-left: 0;
     }
   }
 
@@ -177,6 +184,8 @@
   }
 
   &--flow {
+    @include center;
+
     @include until-tablet {
       margin-top: 16px;
     }
