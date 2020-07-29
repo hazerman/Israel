@@ -15,7 +15,7 @@
     return '';
   };
 
-  var checkInputValue = function (input) {
+  var setRequiredCustom = function (input) {
     if (!input.value) {
       input.setAttribute('required', '');
     }
@@ -38,23 +38,33 @@
         inputTel.setCustomValidity(getValidityMessage(inputTel));
       });
 
+      var finishValidation = function (hasInputName) {
+        if (form.id === 'popup-form') {
+          window.popup.removeSpecial();
+        } else {
+          window.popup.showAccepted();
+        }
+        if (hasInputName) {
+          localStorage.setItem('name', inputName.value);
+        }
+        localStorage.setItem('tel', inputTel.value);
+      };
+
       form.addEventListener('submit', function (evt) {
         evt.preventDefault();
         if (!inputName) {
-          checkInputValue(inputTel);
-          return;
-        }
-        if (!inputTel.value || !inputName.value) {
-          checkInputValue(inputTel);
-          checkInputValue(inputName);
-        } else {
-          if (form.id === 'popup-form') {
-            window.popup.removeSpecial();
+          if (inputTel.value) {
+            finishValidation(false);
           } else {
-            window.popup.showAccepted();
+            inputTel.setAttribute('required', '');
           }
-          localStorage.setItem('name', inputName.value);
-          localStorage.setItem('tel', inputTel.value);
+        } else {
+          if (!inputName.value || !inputTel.value) {
+            setRequiredCustom(inputName);
+            setRequiredCustom(inputTel);
+          } else {
+            finishValidation(true);
+          }
         }
       });
     }
