@@ -107,6 +107,10 @@
     background-image: url("../img/bg-stamp-mobile@1x.png");
     background-size: 264px;
     background-position: top 355px right -48px;
+
+    @include from-retina {
+      background-image: url("../img/bg-stamp-mobile@2x.png");
+    }
   }
 }
 

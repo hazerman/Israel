@@ -22,7 +22,11 @@
 
     background-image: url("../img/bg-city-1-mobile@1x.png");
     background-size: 320px auto;
-    background-position: top 153px right -54px;
+    background-position: top 153px right -24px;
+
+    @include from-retina {
+      background-image: url("../img/bg-city-1-mobile@2x.png");
+    }
   }
 
   h2 {
