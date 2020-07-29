@@ -3,29 +3,29 @@
   padding-top: 27px;
   padding-bottom: 30px;
 
-  background-image: url("../../img/bg-city-2-desktop@1x.png"),
-    url("../../img/bg-reviews-desktop@1x.png");
+  background-image: url("../img/bg-city-2-desktop@1x.png"),
+    url("../img/bg-reviews-desktop@1x.png");
   background-repeat: no-repeat;
   background-size: 535px auto, 92.1669% auto;
   background-position: top 83px right -12px, top 65px right;
 
   @include from-retina {
-    background-image: url("../../img/bg-city-2-desktop@2x.png"),
-      url("../../img/bg-reviews-desktop@2x.png");
+    background-image: url("../img/bg-city-2-desktop@2x.png"),
+      url("../img/bg-reviews-desktop@2x.png");
   }
 
   @include until-tablet {
     padding-top: 19px;
     padding-bottom: 20px;
 
-    background-image: url("../../img/bg-city-2-mobile@1x.png"),
-      url("../../img/bg-reviews-mobile@1x.png");
+    background-image: url("../img/bg-city-2-mobile@1x.png"),
+      url("../img/bg-reviews-mobile@1x.png");
     background-size: 439px auto, auto 234px;
     background-position: top 585px right -151px, top 700px right -59px;
 
     @include from-retina {
-      background-image: url("../../img/bg-city-2-mobile@2x.png"),
-        url("../../img/bg-reviews-mobile@2x.png");
+      background-image: url("../img/bg-city-2-mobile@2x.png"),
+        url("../img/bg-reviews-mobile@2x.png");
     }
   }
 
